@@ -1,0 +1,16 @@
+﻿<html>
+    <head>
+        <title>4-12</title>
+        <script type="text/javascript">
+            function appendMessage() {
+                var oNewP = document.createElement("p");
+                var oText = document.createTextNode("新文本");
+                oNewP.appendChild(oText);
+                document.body.appendChild(oNewP);
+            }
+        </script>
+    </head>
+    <body  onload="appendMessage()">
+        <p>老文本</p> 
+    </body>
+</html>

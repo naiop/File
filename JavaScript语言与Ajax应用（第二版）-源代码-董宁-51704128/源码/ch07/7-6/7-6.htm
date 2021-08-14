@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>7-6</title>
+    <link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css"/>
+    <script type="text/javascript" src="extjs/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="extjs/ext-all.js"></script>
+    <script type="text/javascript">
+       
+        Ext.onReady(function() {
+            //设置blank图片为本地路径
+            Ext.BLANK_IMAGE_URL = "extjs/resources/images/default/s.gif";
+            //创建树状菜单对象
+            var root = new Ext.tree.AsyncTreeNode({
+                id: "root",
+                text: "根节点",
+                children: [{
+                            text: "个人管理",
+                            children: [
+                               { text: "修改资料", leaf: true },
+                               { text: "审核操作", leaf: true }
+                            ]
+                        }, {
+                            text: "系统管理",
+                            children: [
+                               { text: "用户管理", leaf: true },
+                               { text: "角色管理", leaf: true },
+                               { text: "分类管理", leaf: true },
+                               { text: "卡片管理", leaf: true },
+                               { text: "汇总审核", leaf: true },
+                               { text: "公告管理", leaf: true }
+                            ]
+                        }, {
+                            text: "综合信息",
+                            children: [
+                               { text: "销售统计", leaf: true },
+                               { text: "浏览投诉", leaf: true }
+                            ]
+                        }]
+            });
+            //将树状菜单放入容器
+            var tree = new Ext.tree.TreePanel({
+                root: root, 
+                renderTo: "hello",
+                width: 200
+            });
+            //展开树状菜单
+            tree.expandAll();             
+        });
+  
+    </script>
+</head>
+<body>
+    <div id="hello"></div>
+</body>
+</html>

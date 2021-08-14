@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>ch08</title>
+    <style type="text/css">
+        img{
+        	border:0px;
+        }
+        .pics
+        {
+        	position:relative;
+        }
+        .pics img
+        {
+        	position:absolute;
+        	left:0px;
+        	top:0px;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+    <script type="text/javascript">
+        //ready事件在所有DOM加载完后发生
+        $().ready(function () {
+            //当前图片总数量
+            var totalPics = 5;
+            //当前显示的图片号
+            var current = 1;
+            //该函数显示下一幅图片，隐藏当前图片
+            function ShowNext() {
+                //保存下一幅图片的编号
+                var next = 0;
+                //保存目前显示的图片的编号
+                var old = 0;
+                //计算old与next的值
+                if (current < 5) {
+                    next = current + 1;
+                    old = current;
+                    current = next;
+                } else {
+                    next = 1;
+                    old = current;
+                    current = next;
+                }
+                //将老图片放置到上层
+                $("#img" + old).css("z-index", "1001");
+                //将新图片放置到底层
+                $("#img" + next).css("z-index", "1000");
+                //显示新图片，目前新图片被老图片覆盖
+                $("#img" + next).show();
+                //利用fadeOut函数逐渐隐藏老图片
+                $("#img" + old).fadeOut("slow");
+            }
+            //设置定时器周期执行ShowNext函数
+            window.setInterval(ShowNext, 3000);
+        });
+        
+    </script>
+</head>
+<body>
+    <table width="778" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <div class="pics">
+                    <img alt="" class="pic" id="img1" src="images/01.jpg" width="788" height="150"/>    
+                    <img alt="" class="pic" id="img2" src="images/02.jpg" width="788" height="150" style="display: none;"/>
+                    <img alt="" class="pic" id="img3" src="images/03.jpg" width="788" height="150" style="display: none;"/>
+                    <img alt="" class="pic" id="img4" src="images/04.jpg" width="788" height="150" style="display: none;"/>
+                    <img alt="" class="pic" id="img5" src="images/05.jpg" width="788" height="150" style="display: none;"/>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

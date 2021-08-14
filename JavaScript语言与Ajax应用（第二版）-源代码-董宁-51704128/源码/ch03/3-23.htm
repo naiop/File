@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>RegExp 对象的方法使用</title>
+		<script type="text/javascript">
+			var str="The best things in life are free.";
+			var ptnSearch1=new RegExp("f");
+			console.log("字符串："+str);
+			console.log("检索该字符串中是否存在字母 'f'："+ptnSearch1.test(str));
+			ptnSearch1.compile("d");    //改变检索模式
+			console.log("检索该字符串中是否存在字母 'd'："+ptnSearch1.test(str));
+			var ptnSearch2=new RegExp("e","g");
+			var result="";
+			for(;;)
+			{
+				var temp=ptnSearch2.exec(str);
+				if(temp==null)   break;
+				result+=temp+" ";
+			}
+			console.log("检索该字符串中所有字母'e'并输出："+result);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

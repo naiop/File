@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>9-7</title>
+    <link rel="stylesheet" type="text/css" href="ext/resources/css/ext-all.css"/>
+    <script type="text/javascript" src="ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="ext/ext-all.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function() {
+            //字面量对象参数1
+            var options1 = {
+                url: "a.js",
+                timeout: 1000,
+                method: "GET",
+                failure: function(response, options) { },
+                success: function(response, options) {
+                    //获取JSON格式数据并解析
+                    var data = Ext.decode(response.responseText);
+                    var tt = "";
+                    tt += data.Unid + "，";
+                    tt += data.CustomerName + "，";
+                    tt += data.Memo + "，";
+                    tt += data.Other;
+                    Ext.get("content1").update(tt);
+                }
+            };
+            //字面量对象参数2
+            var options2 = {
+                url: "books.xml",
+                timeout: 1000,
+                method: "GET",
+                failure: function(response, options) { },
+                success: function(response, options) {
+                    //获取XML格式数据并解析
+                    var data = response.responseXML;
+                    var title = Ext.DomQuery.select('/root/book/title', data);
+                    var tt = "";
+                    tt += title[0].childNodes[0].nodeValue + "，";
+                    tt += title[1].childNodes[0].nodeValue;
+                    Ext.get("content2").update(tt);
+                }
+            };
+            //为按钮绑定单击事件
+            Ext.get("btn1").on("click", function() {
+                //使用参数1的配置发送ajax请求
+                Ext.Ajax.request(options1);
+            });
+            //为按钮绑定单击事件
+            Ext.get("btn2").on("click", function() {
+                //使用参数2的配置发送ajax请求
+                Ext.Ajax.request(options2);
+            });
+        }); 
+    </script>
+</head>
+<body>
+    <input id="btn1" type="button" value="Ajax方法获取JSON数据" />
+    <input id="btn2" type="button" value="Ajax方法获取XML数据" />
+    <div id="content1"></div>
+    <div id="content2"></div>
+</body>
+</html>

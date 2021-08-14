@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>计时</title>
+</head>
+<body>
+	<input onclick="beginTest()" type="button" value="测试"></input>
+	<script type="text/javascript">
+		function test(){
+			for(var i=0;i<10;i++){
+				a(1000);
+			}
+			b(10000);
+		}
+		function a(n){
+			for(var i=0;i<n;i++){
+				//console.log("i");
+			}
+		}
+		function b(n){
+			for(var i=0;i<n;i++){
+
+			}
+		}
+		function beginTest(){
+			console.profile("profile1");
+			test();
+			console.profileEnd("profile1");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>8-1</title>
+    <style type="text/css">
+        .demo{
+        	background-color:gray;
+        	color:White;
+        	top:50px;
+        	width:200px;
+        	position:absolute;
+        }
+    </style>
+    <script type="text/javascript" >
+        function Effect(options) {
+            var ele = options.element;
+            if (typeof (ele) == "string") ele = document.getElementById(options.element);
+            if (!ele) return false;
+            var fps = 30;
+            //存放步数
+            var step = 0;
+            //计算总步数
+            var totalSteps = options.duration / 1000 * fps;
+            //计算美步之间的间隔
+            var interval = (options.begin - options.end) / totalSteps;
+            var intId;
+            function animate() {
+                //计算新的位置
+                var newValue = options.begin - (step * interval);
+                //比较并递增
+                if (step++ < totalSteps) {
+                    //使用Math.ceil换算整数
+                    ele.style[options.prop] = Math.ceil(newValue) + "px";
+                } else {
+                    //将元素移动到终点
+                    ele.style[options.prop] = options.end + "px";
+                    //停止周期执行
+                    Methods.stop();
+                }
+            }
+            var Methods = {
+                start: function() {
+                    intId = setInterval(animate, 1000 / 30);
+                },
+                stop: function() {
+                    clearInterval(intId);
+                },
+                reStart: function() {
+                    step = 0;
+                    ele.style[options.prop] = options.begin + "px";
+                },
+                end: function() {
+                    step = totalSteps;
+                    ele.style[options.prop] = options.end + "px";
+                }
+            };
+            return Methods;
+        }
+        window.onload = function() {
+            var options = {
+                element: "d1",
+                prop: "top",
+                begin: 50,
+                end: 200,
+                duration: 5000
+            };
+            var ef = new Effect(options);
+            var a1 = document.getElementById("a1");
+            var a2 = document.getElementById("a2");
+            var a3 = document.getElementById("a3");
+            var a4 = document.getElementById("a4");
+            a1.onclick = function() {
+                ef.start();
+            }
+            a2.onclick = function() {
+                ef.stop();
+            }
+            a3.onclick = function() {
+                ef.reStart();
+            }
+            a4.onclick = function() {
+                ef.end();
+            }
+        }
+    </script>
+</head>
+<body>
+    <a id="a1" href="#">开始</a>|
+    <a id="a2" href="#">暂停</a>|
+    <a id="a3" href="#">重置</a>|
+    <a id="a4" href="#">结束</a>
+    <div id="d1" class="demo">
+        动画效果
+    </div>
+</body>
+</html>

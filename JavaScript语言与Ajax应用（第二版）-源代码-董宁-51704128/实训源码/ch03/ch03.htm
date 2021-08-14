@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>ch03</title>
+    <script type="text/javascript">
+        //--------------创建MyDate对象--------------
+        function MyDate() {
+            //保存今天的日期
+            this.todayDate = new Date();
+            //保存天数增加后的日期
+            this.newDate = new Date();
+            //保存增加的天数
+            this.daysToAdd = 0;
+        }
+        //成员函数，用于计算天数增加后的日期
+        MyDate.prototype.AddDays = function (days) {
+            var newTime = this.todayDate.getTime() + (days * 24 * 60 * 60 * 1000);
+            this.newDate.setTime(newTime);
+            this.daysToAdd = days;
+        }
+        //成员函数，获取算天数增加后的日期
+        MyDate.prototype.GetDays = function () {
+            //用控制台输出结果
+            console.log(this.daysToAdd + "天后的日期是" + this.newDate.toLocaleString());
+            //返回新的日期对象
+            return this.newDate;
+        }
+        //------------MyDate对象创建完毕-------------
+
+        //测试MyDate对象
+        var d = new MyDate();
+        d.AddDays(5);
+        d.GetDays();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

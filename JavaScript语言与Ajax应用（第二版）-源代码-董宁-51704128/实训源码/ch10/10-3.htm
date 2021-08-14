@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ch10</title>
+    <style type="text/css">
+        .error{
+        	color:Red;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            //根据表单id获取表单
+            var frm1 = document.getElementById("frm1");
+            //在文本框后插入验证错误信息
+            function ErrorMsg(txtBox, msg) {
+                var errSpan = txtBox.nextSibling;
+                //判断span标记是否已经存在
+                if (errSpan != null && errSpan.nodeName == "SPAN" && errSpan.className == "error") {
+                    errSpan.innerHTML = msg;
+                }
+                else {
+                    //创建span标记并利用DOM方法添加到文本框之后
+                    errSpan = document.createElement("span");
+                    errSpan.className = "error";
+                    errSpan.innerHTML = msg;
+                    if (txtBox.nextSibling != null)
+                        txtBox.parentNode.insertBefore(errSpan, txtBox.nextSibling);
+                    else
+                        txtBox.parentNode.appendChild(errSpan);
+                }
+            }
+            var isValidate = new Array();
+            isValidate["mailName"] = false;
+            isValidate["password"] = false;
+            isValidate["birthDay"] = false;
+            isValidate["Sex"] = false;
+            //用户名文本框的输入格式先在客户端判断然后送到服务器端判断
+            $("#txt1").bind("blur", function () {
+                isValidate["mailName"] = false;
+                var txtMailName = $("#txt1").val();
+                //设置邮件格式正则表达式
+                var mailRegexp = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+                //客户端验证，看看是否输入了用户名
+                if (txtMailName == "") {
+                    ErrorMsg(this, "必须填写邮件名!");
+                    $("#img1").hide();
+                } else if (txtMailName.search(mailRegexp) == -1) {
+                    ErrorMsg(this, "邮件名格式不正确!");
+                    $("#img1").hide();
+                }
+                else {
+                    //客户端验证通过后，发送数据到服务器做进一步判断
+                    $.getJSON("AjaxValidate.ashx", {
+                        "field": "name",
+                        "value": txtMailName
+                    }, function (data) {
+                        var inputBox = $("#txt1").get(0);
+                        if (data.error == 1) {
+                            $("#img1").hide();
+                            ErrorMsg(inputBox, data.msg);
+                        } else {
+                            isValidate["mailName"] = true;
+                            ErrorMsg(inputBox, "");
+                            $("#img1").show();
+                        }
+                    });
+                }
+            });
+            //出生日期文本框的输入格式先在客户端判断然后送到服务器端判断
+            $("#txt2").bind("blur", function () {
+                isValidate["birthDay"] = false;
+                var txtBirthDay = $("#txt2").val();
+                //设置日期格式正则表达式
+                var dateRegexp = /^\d\d\d\d[\/.-]\d\d[\/.-]\d\d$/;
+                //检查日期格式是否正确
+                if (txtBirthDay.search(dateRegexp) == -1) {
+                    ErrorMsg(this, "出生日期格式不正确!");
+                    $("#img2").hide();
+                }
+                else {
+                    //发送数据到服务器做进一步判断
+                    $.getJSON("AjaxValidate.ashx", {
+                        "field": "dayofyear",
+                        "value": txtBirthDay
+                    }, function (data) {
+                        var inputBox = $("#txt2").get(0);
+                        if (data.error == 1) {
+                            $("#img2").hide();
+                            ErrorMsg(inputBox, data.msg);
+                        } else {
+                            isValidate["birthDay"] = true;
+                            ErrorMsg(inputBox, "");
+                            $("#img2").show();
+                        }
+                    });
+                }
+            });
+            //性别文本框的输入只需要在客户端判断
+            $("#txt3").bind("blur", function () {
+                isValidate["Sex"] = false;
+                var txtSex = $("#txt3").val();
+                if (txtSex == "男" || txtSex == "女") {
+                    isValidate["Sex"] = true;
+                    ErrorMsg(this, "");
+                    $("#img3").show();
+                } else {
+                    ErrorMsg(this, "性别只能为“男”或“女”!");
+                    $("#img3").hide();
+                }
+            });
+            //密码判断函数
+            function checkPsw() {
+                isValidate["password"] = false;
+                var psw1 = $("#psw1").val();
+                var psw2 = $("#psw2").val();
+                var txtPsw2 = $("#psw2").get(0);
+                if (psw1 == "" || psw2 == "") {
+                    ErrorMsg(txtPsw2, "密码不能为空！");
+                    $("#img5").hide();
+                } else if (psw1 != psw2) {
+                    ErrorMsg(txtPsw2, "密码不一致！");
+                    $("#img5").hide();
+                } else {
+                    isValidate["password"] = true;
+                    ErrorMsg(txtPsw2, "");
+                    $("#img5").show();
+                }
+            }
+            //判断密码是否一致
+            $("#psw1").bind("blur", checkPsw);
+            //判断密码是否一致
+            $("#psw2").bind("blur", checkPsw);
+            //处理表单的onsubmit事件
+            frm1.onsubmit = function () {
+                for (var k in isValidate) {
+                    if (isValidate[k] == false) {
+                        alert("数据验证未通过!");
+                        return false;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="frm1" action="http://www.baidu.com">
+        <span>邮件名：</span><input id="txt1" name="userName" type="text" /><img id="img1" style="display:none" src="icon_ok.gif" alt=""/><br />
+        <span>密码：</span><input id="psw1" name="password1" type="password" /><img id="img4" style="display:none" src="icon_ok.gif" alt=""/><br />
+        <span>确认密码：</span><input id="psw2" name="password2" type="password" /><img id="img5" style="display:none" src="icon_ok.gif" alt=""/><br />
+        <span>出生日期：</span><input id="txt2" name="birthDay" type="text" /><img id="img2" style="display:none" src="icon_ok.gif" alt=""/><br />
+        <span>性别：</span><input id="txt3" name="Sex" type="text" /><img id="img3" style="display:none" src="icon_ok.gif" alt=""/><br />
+        <input type="submit" value="注册新邮件" />
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>8-3</title>
+    <style type="text/css">
+        .demo{
+        	background-color:gray;
+        	color:White;
+        	top:50px;
+        	width:200px;
+        	position:absolute;
+        }
+    </style>
+    <script type="text/javascript" >
+        function Effect(options) {
+            var ele = options.element;
+            if (typeof (ele) == "string") ele = document.getElementById(options.element);
+            if (!ele) return false;
+            var fps = 30;
+            //存放步数
+            var step = 0;
+            //计算总步数
+            var totalSteps = options.duration / 1000 * fps;
+            //计算美步之间的间隔
+            var interval = (options.begin - options.end) / totalSteps;
+            var intId;
+            function animate() {
+                //计算新的位置
+                var newValue = options.begin - (step * interval);
+                //比较并递增
+                //检查开始开始事件是否存在，步是否为0
+                if (options.onStart && step == 0) options.onStart();
+                if (options.onStep) options.onStep();
+                if (step++ < totalSteps) {
+                    //使用Math.ceil换算整数
+                    ele.style[options.prop] = Math.ceil(newValue) + "px";
+                } else {
+                    //将元素移动到终点
+                    ele.style[options.prop] = options.end + "px";
+                    if (options.onEnd) options.onEnd();
+                    //停止周期执行
+                    Methods.stop();
+                }
+            }
+            var Methods = {
+                start: function() {
+                    intId = setInterval(animate, 1000 / 30);
+                },
+                stop: function() {
+                    clearInterval(intId);
+                },
+                reStart: function() {
+                    step = 0;
+                    ele.style[options.prop] = options.begin + "px";
+                },
+                end: function() {
+                    step = totalSteps;
+                    ele.style[options.prop] = options.end + "px";
+                }
+            };
+            return Methods;
+        }
+        window.onload = function() {
+            var options1 = {
+                element: "d1",
+                prop: "top",
+                begin: 50,
+                end: 100,
+                duration: 500,
+                onEnd: function() { ef2.start(); } //启动第二个动画 
+            };
+            var ef1 = new Effect(options1);
+            var options2 = {
+                element: "d2",
+                prop: "top",
+                begin: 50,
+                end: 150,
+                duration: 500,
+                onEnd: function() { ef3.start(); } //启动第三个动画 
+            };
+            var ef2 = new Effect(options2);
+            var options3 = {
+                element: "d3",
+                prop: "top",
+                begin: 50,
+                end: 200,
+                duration: 500
+            };
+            var ef3 = new Effect(options3);
+            var a1 = document.getElementById("a1");
+            a1.onclick = function() {
+                ef1.start(); //启动第一个动画
+            }
+        }
+    </script>
+</head>
+<body>
+    <a id="a1" href="#">开始</a>
+    <div id="d1" class="demo">
+        动画效果1
+    </div>
+    <div id="d2" class="demo">
+        动画效果2
+    </div>
+    <div id="d3" class="demo">
+        动画效果3
+    </div>
+    <div class="demo">
+        动画效果
+    </div>
+</body>
+</html>

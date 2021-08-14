@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>字面量对象的创建和使用</title>
+		<script type="text/javascript">
+			var pen={
+				type:"铅笔",
+				color:"黑色",
+				price:1.5,
+				using:penUse
+			};
+			
+			function penUse(){
+				console.log("It can be used for drawing.");
+			}
+			
+			console.log("笔的类型："+pen.type);
+			console.log("笔的颜色："+pen.color);
+			console.log("笔的价格："+pen.price);
+			console.log("笔的用途：");
+			pen.using();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

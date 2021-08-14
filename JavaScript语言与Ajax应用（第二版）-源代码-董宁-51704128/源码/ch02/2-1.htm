@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>if...else...示例</title>
+		<script type="text/javascript">
+			var a,b,c,x1,x2;
+			a=1;
+			b=3;
+			c=2;
+			if(a==0)
+			{
+				x1=-c/b;
+				x2=x1;
+				var str="方程的解为：x="+x1;
+				console.log(str);
+			}
+			else if(b*b-4*a*c>=0)
+			{
+				x1=(-b+Math.sqrt(b*b-4*a*c))/(2*a);
+				x2=(-b-Math.sqrt(b*b-4*a*c))/(2*a);
+				var str="方程的解为：x1= "+x1+", x2= "+x2;
+				console.log(str);
+			}
+			else
+			{
+				console.log("该方程无解！");
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

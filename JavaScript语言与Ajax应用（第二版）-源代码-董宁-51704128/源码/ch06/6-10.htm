@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>6-10</title>
+    </head>
+    <body>
+        <input type="text" id="clock" size="35" />
+        <script type="text/javascript">
+            var int = self.setInterval("clock()", 50);
+            function clock() {
+                var t = new Date()
+                document.getElementById("clock").value = t
+            }
+        </script>
+        <input type="button" onclick="int=window.clearInterval(int)" value="ֹͣ"/>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>7-2</title>
+    <style type="text/css">
+        div.demoElement {
+	        width: 80px;
+	        height: 80px;
+	        border: 1px solid black;
+	        background-color: #f9f9f9;
+	        font-size: 12px;
+	        color: #000000;
+	        padding: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            function btnClick1() {
+                $("#myElement1").fadeOut("fast", function() {
+                    alert("动画完成");
+                });
+            }
+            function btnClick2() {
+                var options = {
+                    width:'toggle',
+                    opacity:'toggle'
+                };
+                $("#myElement2").animate(options,"fast", function() {
+                    alert("动画完成");
+                });
+            }
+            function btnClick3() {
+                $("#myElement3").slideToggle("fast", function() {
+                    alert("动画完成");
+                });
+            }
+            $("#btn1").bind("click", btnClick1);
+            $("#btn2").bind("click", btnClick2);
+            $("#btn3").bind("click", btnClick3);
+        }
+    </script>
+</head>
+<body>
+    <input id="btn1" type="button" value="隐藏" />
+    <input id="btn2" type="button" value="展开显示/收起隐藏" />
+    <input id="btn3" type="button" value="展开/收起" /><br/>
+    <hr />
+    <div id="myElement1" class="demoElement">
+	</div>
+	<hr />
+	<div id="myElement2" class="demoElement">
+	</div>
+	<hr />
+	<div id="myElement3" class="demoElement">
+	</div>
+</body>
+</html>

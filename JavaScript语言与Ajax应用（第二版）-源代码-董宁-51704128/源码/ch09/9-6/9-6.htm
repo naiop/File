@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>9-6</title>
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            function btn1Click() {
+                //用load方法实现Ajax应用
+                $("#content1").load("a.htm");
+            }
+            function btn2Click() {
+                //用getJSON方法实现Ajax应用
+                $.getJSON("a.js", function(data) {
+                    var tt = "";
+                    tt += data.Unid + "，";
+                    tt += data.CustomerName + "，";
+                    tt += data.Memo + "，";
+                    tt += data.Other;
+                    $("#content2").html(tt);
+                });
+            }
+            function btn3Click() {
+                //用ajax方法实现Ajax应用
+                var options = {
+                    url: "books.xml",
+                    type: "GET",
+                    dataType: "xml",
+                    timeout: 1000,
+                    error: function() {
+                        alert("Ajax应用错误！");
+                    },
+                    success: function(xml) {
+                        var tt = "";
+                        $(xml).find("title").each(function(i) {
+                            tt += $(this).text() + "，"
+                        });
+                        $("#content3").html(tt);
+                    }
+                };
+                $.ajax(options);
+            }
+            //为按钮绑定事件处理
+            $("#btn1").bind("click", btn1Click);
+            $("#btn2").bind("click", btn2Click);
+            $("#btn3").bind("click", btn3Click);
+        }
+    </script>
+</head>
+<body>
+    <input id="btn1" type="button" value="load方法获取数据" />
+    <input id="btn2" type="button" value="getJSON方法获取数据" />
+    <input id="btn3" type="button" value="ajax方法获取数据" /><br/>
+    <div id="content1"></div>
+    <div id="content2"></div>
+    <div id="content3"></div>
+</body>
+</html>

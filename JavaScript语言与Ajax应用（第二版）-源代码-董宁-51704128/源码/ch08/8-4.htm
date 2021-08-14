@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>8-4</title>
+    <style type="text/css">
+        .newsTitle{
+            font-weight:bold;
+            margin-top:10px;
+            cursor:pointer;
+        }
+        .newsContent{
+        	overflow:hidden;
+        }
+    </style>
+    <script type="text/javascript" >
+        function getElementsByClassName(node, classname) {
+            var list = new Array();
+            var els = node.getElementsByTagName("*");
+            for (var i = 0; i < els.length; i++) {
+                if (els[i].className == classname) {
+                    list.push(els[i]);
+                }
+            }
+            return list;
+        }
+        function Effect(options) {
+            var ele = options.element;
+            if (typeof (ele) == "string") ele = document.getElementById(options.element);
+            if (!ele) return false;
+            var fps = 30;
+            //存放步数
+            var step = 0;
+            //计算总步数
+            var totalSteps = options.duration / 1000 * fps;
+            //计算美步之间的间隔
+            var interval = (options.begin - options.end) / totalSteps;
+            var intId;
+            function animate() {
+                //计算新的位置
+                var newValue = options.begin - (step * interval);
+                //比较并递增
+                //检查开始开始事件是否存在，步是否为0
+                if (options.onStart && step == 0) options.onStart();
+                if (options.onStep) options.onStep();
+                if (step++ < totalSteps) {
+                    //使用Math.ceil换算整数
+                    ele.style[options.prop] = Math.ceil(newValue) + "px";
+                } else {
+                    //将元素移动到终点
+                    ele.style[options.prop] = options.end + "px";
+                    if (options.onEnd) options.onEnd();
+                    //停止周期执行
+                    Methods.stop();
+                }
+            }
+            var Methods = {
+                start: function() {
+                    intId = setInterval(animate, 1000 / 30);
+                },
+                stop: function() {
+                    clearInterval(intId);
+                },
+                reStart: function() {
+                    step = 0;
+                    ele.style[options.prop] = options.begin + "px";
+                },
+                end: function() {
+                    step = totalSteps;
+                    ele.style[options.prop] = options.end + "px";
+                }
+            };
+            return Methods;
+        }
+        function NewsList(element) {
+            var answer = element.nextSibling;
+            if (answer.nodeType != 1) answer = answer.nextSibling;
+            var startHeight = answer.offsetHeight;
+            var hidden = false;
+            function toggle() {
+                var start, stop;
+                if (hidden) {
+                    start = 0;
+                    stop = startHeight;
+                } else {
+                    start = startHeight;
+                    stop = 0;
+                }
+                var options = {
+                    element: answer,
+                    begin:start,
+                    end:stop,
+                    duration:250,
+                    prop:'height'
+                };
+                (new Effect(options)).start();
+                hidden = hidden ? false : true;
+            }
+            element.onclick = toggle;
+            toggle();
+        }
+        window.onload = function() {
+            var els = getElementsByClassName(document, "newsTitle");
+            for (var i = 0; i < els.length; i++) {
+                new NewsList(els[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="newsTitle">今日关注</div>
+    <div class="newsContent">今日关注内容;今日关注内容;今日关注内容;<br/>今日关注内容;今日关注内容;...</div>
+    <div class="newsTitle">股市行情</div>
+    <div class="newsContent">股市行情内容;股市行情内容;股市行情内容;<br/>股市行情内容;股市行情内容;...</div>
+    <div class="newsTitle">娱乐新闻</div>
+    <div class="newsContent">娱乐新闻内容;娱乐新闻内容;娱乐新闻内容;<br/>娱乐新闻内容;娱乐新闻内容;...</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>使用ECMAScript 6新语法定义类并使用对象实例</title>
+		<script src="traceur.js" type="text/javascript"></script>
+		<script src="bootstrap.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<script type="module">
+			//定义类
+			class Car {
+				//定义构造函数
+				constructor(make, year) {
+						//定义类成员
+						this._make = make;
+						this._year = year;
+					}
+					//定义成员函数
+					make() {
+						return this._make;
+					}
+					//定义成员函数
+					year() {
+						return this._year;
+					}
+					//定义成员函数
+					toString() {
+						return this.make() + ' ' + this.year();
+					}
+			}
+			//继承类
+			class Motorcycle extends Car {
+				constructor(make, year) {
+						//调用基类的构造方法
+						super(make, year);
+					}
+					toString() {
+						//调用基类的toString方法
+						return 'Motorcycle ' + super.toString();
+					}
+			}
+
+			//创建对象实例
+			var car = new Car('Toyota Corolla', 2015);
+			//使用对象实例
+			console.log(car.make()); // Toyota Corolla
+			console.log(car.year()); // 2015
+			console.log(car.toString()) // Toyota Corolla 2015
+
+			//创建对象实例
+			var motorcycle = new Motorcycle('Yamaha V-REX', 2015);
+			//使用对象实例
+			console.log(motorcycle.toString()) // Motorcycle Yamaha V-REX 2015
+		</script>
+	</body>
+</html>

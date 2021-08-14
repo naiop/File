@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>修改length属性更改数组</title>
+		<script type="text/javascript">
+			function printArray(arrayName)
+			{
+				var strArray="";
+				for(var i=0;i<arrayName.length;i++)
+				{
+					strArray+="myArray["+i+"]="+arrayName[i]+"    ";
+				}
+				console.log(strArray);
+			}
+			var myArray=new Array("First","Second","Third","Forth");
+			console.log("原始数组：");
+			printArray(myArray);
+			console.log("设置：myArray.length=3");
+			myArray.length=3;
+			printArray(myArray);
+			console.log("设置：myArray.length=4");
+			myArray.length=4;
+			myArray[3]="Fifth";
+			printArray(myArray);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

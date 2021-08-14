@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>函数的length属性</title>
+		<script type="text/javascript">
+			function add(x,y)
+			{
+				if(add.length!=arguments.length)
+				{
+					return "传递过来的参数 个数与函数定义的参数个数不一致！";
+				}
+				else
+				{
+					var z=x+y;
+					return z;
+				}
+			}
+			console.log("函数add的length值为："+add.length);
+			console.log("add(3,4):"+add(3,4));
+			console.log("add(3,4,5):"+add(3,4,5));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

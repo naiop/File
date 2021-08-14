@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>JSON.parse方法的使用</title>
+		<script type="text/javascript">
+			//字符串形式的JSON
+			var jsonValue = '{"firstName":"Ning","lastName":"Dong","email":"dong.ning@qq.com"}';
+			//转换为JavaScript对象
+			try{
+				var jsonObj = JSON.parse(jsonValue);
+				console.log(jsonObj);
+			}catch(e){
+				console.log(e);
+			}
+			//字符串形式的JSON(错误格式)
+			var jsonValue = '{firstName:"Ning",lastName:"Dong",email:"dong.ning@qq.com"}';
+			try{
+				jsonObj = JSON.parse(jsonValue);
+				console.log(jsonObj);
+			}catch(e){
+				console.log(e);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

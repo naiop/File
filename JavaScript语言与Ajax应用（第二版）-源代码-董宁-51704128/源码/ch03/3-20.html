@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title> Map的基本用法</title>
+        <script type="text/javascript">
+            var m=new Map();
+            m.set("str",5);    // 键是字符串
+            m.set(101,"javascript");   // 键是数值
+            m.set(undefined,"nah");   // 键是undefined
+            console.log(m.has("str"));
+            console.log(m.has(101));
+            console.log(m.has(undefined));
+            m.delete(undefined);
+            console.log(m.has(undefined));
+            console.log(m.get(101));
+            var hi=function(){console.log("hi!")}
+            m.set(hi,"hello world");  // 键是函数
+            console.log(m.get(hi));
+            var obj={name:"David"};
+            m.set(obj,"title");       // 键是对象
+            console.log(m.get(obj));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

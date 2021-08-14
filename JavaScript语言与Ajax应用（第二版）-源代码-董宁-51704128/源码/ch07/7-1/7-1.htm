@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>7-1</title>
+    <script type="text/javascript" src="prototype.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            function onEach(el) {
+                function toggle() {
+                    this.next().toggle();
+                }
+                Event.observe(el, 'click', toggle.bindAsEventListener(el));
+            }
+            $$('.question').each(onEach);
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <div class="question">
+        <b>1、JavaScript变量的作用域？</b>
+    </div>
+    <div class="answer">
+        <p>全局变量的作用域是全局性的，即在整个JavaScript程序中，全局变量处处都在。</p>
+        <p>而在函数内部声明的变量，只在函数内部起作用。这些变量是局部变量，作用域是局部性的；函数的参数也是局部性的，只在函数内部起作用。</p>
+    </div>
+    <div class="question">
+        <b>2、JavaScript变量的作用域？</b>
+    </div>
+    <div class="answer">
+        <p>全局变量的作用域是全局性的，即在整个JavaScript程序中，全局变量处处都在。</p>
+        <p>而在函数内部声明的变量，只在函数内部起作用。这些变量是局部变量，作用域是局部性的；函数的参数也是局部性的，只在函数内部起作用。</p>
+    </div>
+</body>
+</html>

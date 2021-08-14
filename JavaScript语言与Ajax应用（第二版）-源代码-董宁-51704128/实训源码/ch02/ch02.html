@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>ch02-数字排序</title>
+		<script type="text/javascript">
+			function sortNum(){
+				//获得参数个数
+				var arrLength=arguments.length;
+				//通过循环进行排序
+				for(i=0;i<arrLength;i++)
+				{
+					for(j=arrLength-1;j>i;j--)
+					{
+						if(arguments[j]<arguments[j-1])
+						{
+							//交换数组元素的值
+							temp=arguments[j];
+							arguments[j]=arguments[j-1];
+							arguments[j-1]=temp;
+						}
+					}
+				}
+				for(k=0;k<arrLength;k++)
+				{
+					console.log(arguments[k]);
+				}
+			}
+			sortNum(12,4,8,3,6,9,2,0,11,25);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

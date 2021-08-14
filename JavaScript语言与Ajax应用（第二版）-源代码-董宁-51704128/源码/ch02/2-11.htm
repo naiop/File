@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>函数调用实例</title>
+		<script type="text/javascript">
+			function test()
+			{
+				console.log("无返回值的函数调用！");
+				var str="123456";
+			}
+			function add(x,y)
+			{
+				console.log("有返回值的函数调用！");
+				var z=x+y;
+				return z;
+			}
+			
+			test();
+			var a=10,b=20;
+			var c=add(a,b);
+			console.log(a+"+"+b+"="+c);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

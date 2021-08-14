@@ -1,0 +1,25 @@
+﻿<html>
+    <head>
+        <title>4-3</title>
+        <script type="text/javascript">
+            function Greeting() {
+                var newWin = window.open();
+                //获得id为“name”的DOM元素
+                var name = document.getElementById("name");
+                with (newWin.document) {
+                    //通常这里的open()可以省略，在执行write前浏览器自动执行document.open()的动作
+                    open();
+                    write("hello," + name.value + "<br/>Nice to see you!<br/>some notes for you:" +
+                          "<br/><textarea>here is some message...</textarea>" + 
+                          "<br/><button onclick='self.close()'>Good bye!</button>");
+                    close();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        输入你的姓名:<input type="text" id="name" />
+        <button onclick="Greeting()">Greeting</button>
+    </body>
+</html>
+

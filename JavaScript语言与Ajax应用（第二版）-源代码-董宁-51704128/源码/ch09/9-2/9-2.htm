@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>9-2</title>
+    <style type="text/css">
+        body {
+          font-family:Arial,Helvetica,sans-serif;
+        }
+        .book {
+          border-top:1px solid #CCC;
+          padding:10px 5px
+        }
+        .book h2 {
+          margin:0;
+          font-size:1em;
+        }
+        .book .author {
+          margin:0;
+          font-weight:bold;
+          font-size:.9em;
+        }
+        .book p {
+          margin:0
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            //为不同的浏览器创建XMLHttpRequest对象实例
+            var transport;
+            if (window.XMLHttpRequest) {
+                transport = new XMLHttpRequest();
+            } else {
+                try {
+                    transport = new ActiveXObject("MSXML.XMLHTTP.6.0");
+                } catch (e) { }
+                try {
+                    transport = new ActiveXObject("MSXML.XMLHTTP");
+                } catch (e) { }
+            }
+
+            //为按钮添加事件处理
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                //如果成功创建XMLHttpRequest对象实例，则通过对象向服务器发送请求
+                if (transport) {
+                    transport.open("GET", "books.xml", true);
+                    transport.onreadystatechange = function() {
+                        if (transport.readyState == 4) {
+                            //获取根节点
+                            var doc = transport.responseXML.documentElement;
+                            //获取标记名为book的节点的集合
+                            var books = doc.getElementsByTagName('book');
+                            var container = document.getElementById('content');
+                            var book, title, author, description, text;
+                            for (var i = 0; i < books.length; i++) {
+                                //创建div作为书籍数据的容器
+                                book = document.createElement('div');
+                                book.className = 'book';
+                                //创建h2存放书籍标题
+                                title = document.createElement('h2');
+                                text = document.createTextNode(books[i].childNodes[1].firstChild.data);
+                                title.appendChild(text);
+                                book.appendChild(title);
+                                //创建p存放作者
+                                author = document.createElement('p');
+                                author.className = 'author';
+                                text = document.createTextNode(books[i].childNodes[3].firstChild.data);
+                                author.appendChild(text);
+                                book.appendChild(author);
+                                //创建p存放内容简介
+                                description = document.createElement('p');
+                                text = document.createTextNode(books[i].childNodes[5].firstChild.data);
+                                description.appendChild(text);
+                                book.appendChild(description);
+                                //将创建的div节点添加到页面
+                                container.appendChild(book);
+                            }
+                        }
+                    }
+                    transport.send();
+                }
+
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="content"></div>
+    <input id="btn" type="button" value="Ajax获取数据" />
+</body>
+</html>

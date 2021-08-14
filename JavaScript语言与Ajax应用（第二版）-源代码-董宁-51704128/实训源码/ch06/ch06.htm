@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>ch06</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var btn = document.getElementById("btn");
+            //对子窗体的引用
+            var newWin = null;
+            //对计时器的引用
+            var tId = null;
+            //对子窗体宽与高的引用
+            var width = 100;
+            var height = 100;
+            btn.onclick = function () {
+                //打开子窗体
+                newWin = window.open("childWin.htm", "ChildWin", "location=no,scrollbars=no,menubars=no,toolbars=no,resizeable=no,width=100,height=100");
+                //初始化宽与高
+                width = 100;
+                height = 100;
+                //打开定时执行
+                tId = window.setInterval(exWin, 2);
+            }
+            //扩大子窗体
+            function exWin() {
+                if (height <= 500) {
+                    height += 5;
+                } else if (width <= 500) {
+                    width += 5;
+                } else {
+                    //扩大完成后取消定时执行
+                    newWin.alert("子窗口开启完毕！");
+                    window.clearInterval(tId);
+                }
+                newWin.resizeTo(width, height);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="打开新窗口" />
+</body>
+</html>

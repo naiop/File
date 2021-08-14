@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>异常处理</title>
+		<script type="text/javascript">
+			function myFun(x,y)
+			{
+				var z;
+				try{
+					if(y==0)
+					{
+						throw new Error("除数不能为0");
+					}
+					z=x/y;
+				}
+				catch(e)
+				{
+					z=e.message;
+				}
+				return z;
+			}
+			console.log(myFun(1,0));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

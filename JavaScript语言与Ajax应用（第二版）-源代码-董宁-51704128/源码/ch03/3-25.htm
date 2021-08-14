@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>隐式创建Error 对象的使用</title>
+		<script type="text/javascript">
+			try{
+				x=y;
+			}
+			catch(e){
+				console.log(e.toString());
+				console.log(e.number&0xffff);
+				console.log(e.description);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

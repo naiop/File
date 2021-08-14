@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>创建日期对象并转化为字符串</title>
+		<script type="text/javascript">
+			var myDate1=new Date();
+			var myDate2=new Date(myDate1.getTime());
+			var myDate3=new Date(myDate1.toString());
+			var myDate4=new Date(2011,2,1,18,30,20,100);
+			console.log("本地日期toString():  "+myDate1.toString());
+			console.log("本地日期toLocalString():  "+myDate2.toLocaleString());
+			console.log("GMT 世界时间toGMTString():  "+myDate3.toGMTString());
+			console.log("UTC世界时间toUTCString():  "+myDate4.toUTCString());
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

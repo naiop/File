@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>设置日期各字段</title>
+		<script type="text/javascript">
+			var myDate=new Date();
+			myDate.setFullYear(2011,2,15);
+			myDate.setHours(8);
+			myDate.setMinutes(45);
+			myDate.setSeconds(59);
+			console.log("设置日期："+myDate.toString());
+			myDate.setDate(myDate.getDate()+5);
+			console.log("5 天后的日期："+myDate.toString());
+			myDate.setTime(623510234);
+			console.log("setTime()方法："+myDate.toString());
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

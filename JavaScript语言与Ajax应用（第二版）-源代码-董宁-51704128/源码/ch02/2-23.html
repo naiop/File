@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>斐波那契数列</title>
+        <script type="text/javascript">
+            function* fib() 
+            {
+                 var [prev, curr] = [0, 1];
+                 for (;;) 
+                 {
+                     [prev, curr] = [curr, prev + curr];
+                     yield curr;
+                 }
+            }
+            for (var n of fib()) 
+            {
+                if (n > 10) break;
+                console.log(n);
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

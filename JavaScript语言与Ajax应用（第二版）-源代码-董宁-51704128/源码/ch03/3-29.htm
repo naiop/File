@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>通过构造函数方式定义对象并使用new操作符创建对象实例</title>
+		<script type="text/javascript">
+			//对象的构造函数
+			function Car(sColor, iDoors){
+				this.color=sColor;
+				this.doors=iDoors;
+				this.showColor=funcColor;
+			}
+			//定义对象的方法
+			function funcColor(){
+				console.log("color: "+this.color);
+			}
+			//生成对象的实例
+			var oCar=new Car("red",4);
+
+			console.log("Car's infomation:");
+			oCar.showColor();
+			console.log("Doors: "+oCar.doors);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

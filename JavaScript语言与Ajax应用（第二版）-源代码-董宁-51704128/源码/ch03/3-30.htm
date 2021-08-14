@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>通过原型方式定义对象</title>
+		<script type="text/javascript">
+			function Car(){
+			}
+			Car.prototype.color="red";
+			Car.prototype.doors=4;
+			Car.prototype.showColor=function(){
+				console.log("color: "+this.color);
+			}
+			
+			var oCar1=new Car();
+			var oCar2=new Car();
+			console.log("Car1's color is "+oCar1.color);
+			console.log("Car2's color is "+oCar2.color);
+			
+			oCar1.color="blue";
+			oCar2.color="white";
+			console.log("After car's color is modified:")
+			console.log("Car1's color is "+oCar1.color);
+			console.log("Car2's color is "+oCar2.color);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

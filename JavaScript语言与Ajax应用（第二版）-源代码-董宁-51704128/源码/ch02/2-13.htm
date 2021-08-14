@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>判断函数的参数传递的类型</title>
+		<script type="text/javascript">
+			function myFun(a,b)
+			{
+				if(typeof(a)=="number"&&typeof(b)=="number")
+				{
+					var c=a*b;
+					return c;
+				}
+				else
+				{
+					return "传递的参数不正确，请使用数字型的参数！";
+				}
+			}
+			console.log(myFun(2,4));
+			console.log(myFun(2,"s"));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

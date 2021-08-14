@@ -1,0 +1,17 @@
+﻿<html> 
+    <head> 
+        <title>4-11</title> 
+        <script type="text/javascript">
+            function replaceMsg() {
+                var newP = document.createElement("p");
+                var newText = document.createTextNode("你能看见我，是因为我是新的文本节点");
+                newP.appendChild(newText);
+                var oldP = document.getElementById("pText");
+                oldP.parentNode.replaceChild(newP, oldP);
+            }  
+        </script>
+    </head> 
+    <body onload="replaceMsg()">     
+        <p id="pText">原始文本</p> 
+    </body> 
+</html>

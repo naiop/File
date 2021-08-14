@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>switch...case...示例</title>
+		<script type="text/javascript">
+			var score,flag;
+			score=85;
+			flag=(score-score%10)/10;
+			switch(flag)
+			{
+				case 10:
+				case 9:
+					console.log("成绩为优（90~100）");
+					break;
+				case 8:
+					console.log("成绩为良（80~89）");
+					break;
+				case 7:
+					console.log("成绩为一般（70~79）");
+					break;
+				case 6:
+					console.log("成绩为及格（60~69）");
+					break;
+				default:
+					console.log("成绩不及格");
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

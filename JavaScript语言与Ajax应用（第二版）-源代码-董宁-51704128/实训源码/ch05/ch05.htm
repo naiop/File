@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>ch05</title>
+    <style type="text/css">
+        li {
+          padding:80px 20px;
+          width:200px;
+          list-style:none;
+          float:left;
+          border:1px solid blue;
+          text-align:center;
+          text-indent:-9999px;
+        }
+        li.flipped {
+          text-indent:0;
+        }
+    </style>
+    <script type="text/javascript">
+        //选中的卡片
+        var selectedPiece;
+        //匹配项目数量
+        var totalMatches = 4;
+        //已找到的匹配项
+        var matchesFound = 0;
+        //id为pieces的元素的onclick事件
+        function checkPiece(evt) {
+            //当前卡片
+            var currentPiece;
+
+            //通过事件参数找到当前卡片
+            evt = evt || window.event;
+            var target = evt.target || evt.srcElement;
+            currentPiece = target;
+
+            //如果是已经打开的卡片这直接返回
+            if (currentPiece.className == 'flipped') 
+                return;
+
+            //显示当前卡片内容
+            currentPiece.className = 'flipped';
+            //如果没有已选中卡片则当前卡片为以选中卡片，函数返回
+            if (!selectedPiece) {
+                selectedPiece = currentPiece;
+                return;
+            }
+            //检查已选中卡片和当前卡片是否匹配
+            if (selectedPiece.innerHTML == currentPiece.innerHTML) {
+                matchesFound++;
+                if (matchesFound == totalMatches) {
+                    alert('全部卡片匹配完成!');
+                } else {
+                    alert('匹配正确!');
+                }
+            } else {
+                alert('匹配错误!');
+                //匹配错误的话则隐藏卡片
+                currentPiece.className = '';
+                selectedPiece.className = '';
+            }
+            selectedPiece = null; //将以选中卡片清空
+        }
+        window.onload = function () {
+            var el = document.getElementById('pieces');
+            el.onclick = checkPiece;
+        }
+    </script>
+</head>
+<body>
+    <ul id="pieces">
+        <li>鲨鱼</li>
+        <li>狮子</li>
+        <li>狮子</li>
+        <li>鲨鱼</li>
+        <li>海豚</li>
+        <li>松鼠</li>
+        <li>海豚</li>
+        <li>松鼠</li>
+    </ul>
+</body>
+</html>

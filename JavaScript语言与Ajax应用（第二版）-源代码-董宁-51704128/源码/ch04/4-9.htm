@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>4-9</title>
+    <script type="text/javascript">
+        function hasClass(name, type) {
+            var r = [];
+            //限定类名(允许多个类名)
+            var re = new RegExp("(^|\\s)" + name + "(\\s|$)");
+            //用类型限制搜索范围，或搜索所有的元素
+            var e = document.getElementsByTagName(type || "*");
+            for (var j = 0; j < e.length; j++)
+            //如果元素类名匹配，则加入到返回值列表中
+                if (re.test(e[j])) r.push(e[j]);
+            //返回匹配的元素
+            return r;
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

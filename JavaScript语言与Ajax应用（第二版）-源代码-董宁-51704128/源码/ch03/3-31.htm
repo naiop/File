@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>使用混合构造函数/原型方式定义对象</title>
+		<script type="text/javascript">
+			//对象的构造函数
+			function Car(sColor, iDoors){
+				this.color=sColor;
+				this.doors=iDoors;
+			}
+			//使用原型方式定义对象的方法
+			Car.prototype.drive=function(driver){
+				console.log(driver+" is driving the car!");
+			}
+			Car.prototype.showInfo=function(){
+				console.log("The car with "+this.doors+" doors is "+this.color+".");
+			}
+			
+			var oCar=new Car("red",4);
+			oCar.drive("Mike");
+			oCar.showInfo();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

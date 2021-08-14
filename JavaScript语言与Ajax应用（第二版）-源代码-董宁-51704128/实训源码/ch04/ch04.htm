@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>ch04</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    //获取时间日期对象
+    var todayDate = new Date();
+    //获取今天的年月日以及星期几
+    var thisYear = todayDate.getFullYear();
+    var thisMonth = todayDate.getMonth();
+    var thisDay = todayDate.getDay();
+    var thisDate = todayDate.getDate();
+    //计算本月一日是星期几
+    var beginAt = thisDate;
+    while (beginAt > 7) {
+        beginAt -= 7;
+    }
+    beginAt = thisDay - beginAt + 1;
+    if (beginAt < 0) {
+        beginAt += 7;
+    }
+    //保存每月天数
+    var monthDays = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+    //如果是润年则2月加一天
+    if (((thisYear % 4 == 0) && !(thisYear % 100 == 0)) || (thisYear % 400 == 0)) {
+        monthDays[1] += 1;
+    }
+    //利用DOM方式创建日历表格所需的元素
+    var dateTable = document.createElement("table");
+    var tbody = document.createElement("tbody");
+    var titleTr = document.createElement("tr");
+    var titleTd = document.createElement("td");
+    //设置表格属性
+    dateTable.setAttribute("border", "1");
+    dateTable.appendChild(tbody);
+    //设置表格标题元素
+    titleTd.setAttribute("colspan", "7");
+    titleTd.setAttribute("align", "center");
+    titleTd.innerHTML = thisYear + "年" + (thisMonth + 1) + "月";
+    //利用DOM方法将表格添加到页面中
+    titleTr.appendChild(titleTd);
+    tbody.appendChild(titleTr);
+    document.body.appendChild(dateTable);
+
+    //创建三个DOM辅助函数
+    //创建td标记
+    function CreateTd(v) {
+        var tempTd = document.createElement("td");
+        tempTd.innerHTML = v;
+        return tempTd;
+    }
+    //创建tr标记
+    function CreateTr(v1, v2, v3, v4, v5, v6, v7) {
+        var tempTr = document.createElement("tr");
+        tempTr.appendChild(CreateTd(v1));
+        tempTr.appendChild(CreateTd(v2));
+        tempTr.appendChild(CreateTd(v3));
+        tempTr.appendChild(CreateTd(v4));
+        tempTr.appendChild(CreateTd(v5));
+        tempTr.appendChild(CreateTd(v6));
+        tempTr.appendChild(CreateTd(v7));
+        return tempTr;
+    }
+    //根据天数和1号是星期几的数据创建日历
+    function CreateCalendar(beginAt, dayPerMonth) {
+        var dayInMonth = new Array();
+        for (var i = 0; i < beginAt; i++) {
+            dayInMonth.push("");
+        }
+        for (var j = 1; j <= dayPerMonth; j++) {
+            if (thisDate == j) {
+                //今天的日期用红色显示
+                dayInMonth.push("<font color='red'>" + j.toString() + "</font>");
+            } else {
+                dayInMonth.push(j.toString());
+            }
+        }
+        if (dayInMonth.length > 28 && dayInMonth.length <= 35) {
+            var nums = 35 - dayInMonth.length;
+            for (var k = 0; k < nums; k++) {
+                dayInMonth.push("");
+            }
+        }
+        if (dayInMonth.length > 35 && dayInMonth.length <= 42) {
+            var nums = 42 - dayInMonth.length;
+            for (var k = 0; k < nums; k++) {
+                dayInMonth.push("");
+            }
+        }
+        while (dayInMonth.length > 0) {
+            tbody.appendChild(CreateTr(dayInMonth.shift(), dayInMonth.shift(), dayInMonth.shift(),
+            dayInMonth.shift(), dayInMonth.shift(), dayInMonth.shift(), dayInMonth.shift()));
+        }
+    }
+    //创建日历头
+    tbody.appendChild(CreateTr("日", "一", "二", "三", "四", "五", "六"));
+    //创建日历
+    CreateCalendar(beginAt, monthDays[thisMonth]);
+</script>
+</html>

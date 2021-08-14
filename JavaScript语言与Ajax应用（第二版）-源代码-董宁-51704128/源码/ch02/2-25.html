@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>测试闭包使用2</title>
+		<script type="text/javascript">
+			var arr = new Array();
+			function Person() 
+			{
+				for (var i = 0; i < 5; i++) 
+				{
+					//要记住，这个属性函数申明，只有立即执行才会取scope属性
+					function temp (num) 
+					{
+						function returnNum () 
+						{
+							return num;
+						}
+						return returnNum;
+					}
+					var item = temp(i);
+					arr.push(item);
+				}
+			}
+			Person();
+			for (var i = 0; i < arr.length; i++) 
+			{
+				var item = arr[i];
+				console.log(item());
+			}
+		</script>
+    </head>
+    <body>
+    </body>
+</html>

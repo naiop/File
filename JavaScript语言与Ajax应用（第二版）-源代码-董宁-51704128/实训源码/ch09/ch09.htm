@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ch09</title>
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+    <script type="text/javascript">
+        $().ready(function () {
+            //为登录按钮绑定单击事件
+            $("#btnLogin").bind("click", function () {
+                //获取用户名和密码
+                var name = $("#name").val();
+                var psw = $("#psw").val();
+                //禁用按钮并显示加载图标
+                $("#btnLogin").attr({ "disabled": "disabled" });
+                $("#imgLoading").show();
+                //Ajax登陆处理
+                $.getJSON("Login.ashx", {
+                    "name": name,
+                    "psw": psw
+                }, function (data) {
+                    //启用按钮并隐藏加载图标
+                    $("#btnLogin").removeAttr("disabled");
+                    $("#imgLoading").hide();
+                    //根据返回的JSON对象判断登陆是否成功
+                    if (data.isLogin == "true") {
+                        alert("登录成功！");
+                    } else {
+                        alert("登录失败！");
+                    }
+                });
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>用户名：</td>
+            <td><input id="name" type="text" /></td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td><input id="psw" type="password" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input id="btnLogin" type="button" value="登录" />
+                <img id="imgLoading" alt="" src="indicator_arrows.gif" style="display:none;" />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

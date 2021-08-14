@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>9-5</title>
+    <script type="text/javascript" src="ajax.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            function process(transport) {
+                var container = document.getElementById('content');
+                //将id为container的div的内容设置为服务器响应字符串
+                container.innerHTML = transport.responseText;
+            }
+            //服务器响应错误的事件处理
+            function processError(transport) {
+                var container = document.getElementById('content');
+                container.innerHTML = "访问超时";
+            }
+            //为按钮添加事件处理
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick = function() {
+                //实例化Ajax对象
+                var ajax = new Ajax();
+                //使用Ajax对象的send方法发出Ajax请求
+                ajax.send("TestAjax.ashx", { onok: process });
+            }
+            //为按钮添加事件处理
+            var btn2 = document.getElementById("btn2");
+            btn2.onclick = function() {
+                //实例化Ajax对象
+                var ajax = new Ajax();
+                //使用Ajax对象的send方法发出Ajax请求
+                ajax.send("TestAjax.ashx?waitTime=3", { onok: process });
+            }
+            //为按钮添加事件处理
+            var btn3 = document.getElementById("btn3");
+            btn3.onclick = function() {
+                //实例化Ajax对象
+                var ajax = new Ajax();
+                //使用Ajax对象的send方法发出Ajax请求，超时设置为3秒钟
+                ajax.send("TestAjax.ashx?waitTime=5", { timeout: 3, onok: process, onerror: processError });
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="content"></div>
+    <input id="btn1" type="button" value="Ajax获取数据（服务器立即给出响应）" /><br />
+    <input id="btn2" type="button" value="Ajax获取数据（服务器3秒后给出响应）" /><br />
+    <input id="btn3" type="button" value="Ajax获取数据（服务器5秒后给出响应，设置的等待时间为3秒）" />
+</body>
+</html>

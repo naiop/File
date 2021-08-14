@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>判断函数的参数传递的个数</title>
+		<script type="text/javascript">
+			function add(x,y)
+			{
+				if(arguments.length!=2)
+				{
+					var str="传递的参数个数有误，一共传递了"+
+						arguments.length+"个参数，分别为：\n";
+					for(var i=0;i<arguments.length;i++)
+					{
+						str+="第"+(i+1)+"个参数的值为："+arguments[i]+"\n";
+					}
+					return str;
+				}
+				else
+				{
+					var z=x+y;
+					return z;
+				}
+			}
+			console.log("add(2,4,6): "+add(2,4,6)+"\n");            //①
+			console.log("add(2): "+add(2)+"\n");                    //②
+			console.log("add(2,4): "+add(2,4)+"\n");                //③			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<html>
+    <head>
+        <title>4-2</title>
+        <script type="text/javascript">
+            function getElements() {
+                var mainContent = document.getElementById("main");
+                mainContent.style.backgroundColor = '#FF0000';
+                var paragraphs = document.getElementsByTagName("p");
+                for (i = 0; i < paragraphs.length; i++) {
+                    paragraphs[i].style.fontSize = '2em';
+                }
+                var elements = document.getElementsByTagName("body")[0].childNodes;
+                for (i = 0; i < elements.length; i++) {
+                    if (elements[i].nodeType == 1 && elements[i].id) 
+                    alert(elements[i].id);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <p class="intro">Welcome to my web site</p>
+            <p>We sell all the widgets you need.</p>
+        </div>
+        <div id="footer">
+            Copyright 2006 Example Corp, Inc.
+        </div>
+        <input type="button" onclick="getElements()" value="执行" />
+    </body>
+</html>
+
+

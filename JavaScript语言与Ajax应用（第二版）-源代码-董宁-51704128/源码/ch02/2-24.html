@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>测试闭包使用1</title>
+		<script type="text/javascript">
+			//比较函数
+			function createComparison(propertyName) 
+			{
+				var	t = propertyName;
+				return function(obj1, obj2) 
+				{
+					//引用了t,而t是外部函数createComparison的成员
+					var item1 = obj1[t];
+					var item2 = obj2[t];
+					if (item1 < item2)
+						return -1;
+					if (item1 > item2)
+						return 1;
+					if (item1 == item2)
+						return 0;
+				}
+			}
+			//比较name
+			var compare = createComparison("name");
+			var result = compare(
+				{name: "d",	age: 20	}, 
+				{name: "c",	age: 27	});
+			console.log(result);
+		</script>
+    </head>
+    <body>
+    </body>
+</html>

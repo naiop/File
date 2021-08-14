@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .error{
+        	color:Red;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            //根据表单id获取表单
+            var frm1 = document.getElementById("frm1");
+            //在文本框后插入验证错误信息
+            function ErrorMsg(txtBox, msg) {
+                var errSpan = txtBox.nextSibling;
+                //判断span标记是否已经存在
+                if (errSpan != null && errSpan.nodeName == "SPAN" && errSpan.className == "error") {
+                    errSpan.innerHTML = msg;
+                }
+                else {
+                    //创建span标记并利用DOM方法添加到文本框之后
+                    errSpan = document.createElement("span");
+                    errSpan.className = "error";
+                    errSpan.innerHTML = msg;
+                    if (txtBox.nextSibling != null)
+                        txtBox.parentNode.insertBefore(errSpan, txtBox.nextSibling);
+                    else
+                        txtBox.parentNode.appendChild(errSpan);
+                }
+            }
+            //处理表单的onsubmit事件
+            frm1.onsubmit = function() {
+                var isValidate = true;
+                //检查用户名是否填写
+                var userName = document.getElementById("txt1");
+                if (userName.value == "") {
+                    isValidate = false;
+                    ErrorMsg(userName, "必须填写用户名!");
+                }
+                else
+                    ErrorMsg(userName, "");
+                //设置日期格式正则表达式
+                var dateRegexp = /^\d\d\d\d[\/.-]\d\d[\/.-]\d\d$/;
+                var birthDay = document.getElementById("txt2");
+                //检查日期格式是否正确
+                if (birthDay.value.search(dateRegexp) == -1) {
+                    isValidate = false;
+                    ErrorMsg(birthDay, "出生日期格式不正确!");
+                }
+                else
+                    ErrorMsg(birthDay, "");
+                //如果验证不通过则阻止表单提交
+                if (!isValidate)
+                    return false;
+                else
+                    alert("验证通过！");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="frm1" action="http://www.baidu.com">
+        <span>用户名：</span><input id="txt1" name="userName" type="text" /><br />
+        <span>出生日期：</span><input id="txt2" name="birthDay" type="text" /><br />
+        <input type="submit" />
+    </form>
+</body>
+</html>
+

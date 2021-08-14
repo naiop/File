@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>数组元素的顺序操作</title>
+		<script type="text/javascript">
+			function printArray(arrayName)
+			{
+				var strArray="";
+				for(var i=0;i<arrayName.length;i++)
+				{
+					strArray+="myArray["+i+"]="+arrayName[i]+"    ";
+				}
+				console.log(strArray);
+			}
+			var myArray=new Array("First","Second","Third","Forth");
+			console.log("原始数组：");
+			printArray(myArray);
+			console.log("逆序排列：");
+			printArray(myArray.reverse());
+			console.log("字母排列：");
+			printArray(myArray.sort());
+
+
+			var arrA = [2,4,3,6,5,1];
+		    //自定义sort()函数排序逻辑
+		    //降序
+		    function desc(x,y)
+		    {
+		        if (x > y)  
+		            return -1;
+		        if (x < y)          
+		            return 1;
+		    }
+		    //升序
+		    function asc(x,y)
+		    {
+		        if (x > y)  
+		            return 1;
+		        if (x < y)          
+		            return -1;
+		    }
+		    console.log("升序排列：");
+		    console.log(arrA.sort(asc));
+		    console.log("降序排列：");
+		    console.log(arrA.sort(desc));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

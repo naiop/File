@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>JSON.stringify方法的使用</title>
+		<script type="text/javascript">
+			//值转换成JSON格式
+			console.log(JSON.stringify("xyz"));
+			console.log(JSON.stringify(1)); 
+			console.log(JSON.stringify(true)); 
+			console.log(JSON.stringify([])); 
+			console.log(JSON.stringify({})); 
+			console.log(JSON.stringify([1, "false", false]));
+			console.log(JSON.stringify({ name: "dn" }));
+			//函数等特殊对象的转换
+			var s = JSON.stringify({
+			    func: function(){},
+			    arr: [ function(){}, undefined ]
+			});
+			console.log(s);
+			//对象转换成JSON格式
+			s = JSON.stringify({
+				a:1,
+				b:2
+			});
+			console.log(s);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

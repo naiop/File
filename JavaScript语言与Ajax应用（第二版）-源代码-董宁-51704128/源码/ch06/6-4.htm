@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>6-4</title>
+        <script type="text/javascript">
+            //alert只接受一个参数，这个参数是一个字符串，alert所做的全部事情
+            //是将这个字符串原封不动地以一个提示框返回给用户。
+            alert("Good Morning!");
+            /*prompt是一个询问框，它产生一个询问输入窗口，同时等待用户输入的结果，
+            以继续执行下面的程序，当用户输入完成，点击确认后，它会将输入的字符串返回，
+            如果用户点击了取消按钮，它会返回null*/
+            alert("Hello,"+prompt("What's your name?")+"!");
+            //confirm是一个确认框，它产生一个YES|NO的确认提示框，如果回答了yes，返回true
+            //如果回答了no，返回false
+            if (confirm("Are you ok?"))
+                alert("Great!");
+            else
+                alert("oh,what's wrong?");
+        </script>
+    </head>
+    <body >
+        <h2>对话框</h2>
+    </body>
+</html>

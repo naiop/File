@@ -1,0 +1,18 @@
+<html>
+    <head>
+    <title>6-11</title>
+        <script type="text/javascript">
+            var icolor=0;
+            var iNum=256;
+            var iID=setInterval(setbgColor, 500);
+            function setbgColor() {
+                document.bgColor = "#" + icolor * iNum * iNum * iNum + icolor * iNum * iNum + icolor * iNum;
+                if ((icolor += 10) > iNum) {
+                    clearInterval(iID);
+                }
+            }
+        </script>
+    </head>
+    <body onload="setbgColor()">
+    </body>
+</html>

@@ -1,0 +1,29 @@
+﻿<html> 
+    <head> 
+        <title>4-8</title> 
+        <style type="text/css"> 
+            .myUL1{ 
+                color:#0000FF; 
+                font-family:Arial; 
+                font-weight:bold; 
+            } 
+            .myUL2{ 
+                text-decoration:underline; 
+            } 
+        </style> 
+        <script type="text/javascript">
+            function check() {
+                var oMy = document.getElementsByTagName("ul")[0];
+                oMy.className += " myUL2"; //追加CSS类,注意" myUL2"前面的空格. 
+            }
+        </script> 
+        </head> 
+    <body> 
+        <ul onclick="check()" class="myUL1"> 
+            <li>HTML</li> 
+            <li>JavaScript</li> 
+            <li>CSS</li> 
+        </ul> 
+    </body> 
+</html>
+

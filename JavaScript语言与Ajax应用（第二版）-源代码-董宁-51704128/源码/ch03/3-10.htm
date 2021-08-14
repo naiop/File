@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>使用Number对象的属性和方法</title>
+		<script type="text/javascript">
+			console.log("构造Number对象的实例 : ");
+			var num1=new Number();
+			var num2=new Number(6);
+			console.log("before: num1="+num1+", num2="+num2);
+			num1=10;
+			num2=20;
+			console.log("after: num1="+num1+", num2="+num2);
+			
+			console.log("可使用的最大的数："+Number.MAX_VALUE);
+			console.log("可使用的最小的数："+Number.MIN_VALUE);
+			
+			if (isNaN("abc")) 
+			{
+				console.log("abc: "+Number.NaN);
+			}
+			
+			var x=(-Number.MAX_VALUE)*2;
+			if(x==Number.NEGATIVE_INFINITY)
+			{
+				console.log("Value of x: "+x);
+			}
+			
+			var str=num1.toString();
+			console.log("num1转换为字符串："+str);
+			
+			var num=new Number(15.67);
+			console.log("将数字15.67舍入为仅有一位小数的数字："+num.toFixed(1));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

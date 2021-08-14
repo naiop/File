@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>9-1</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            //为不同的浏览器创建XMLHttpRequest对象实例
+            var transport;
+            if (window.XMLHttpRequest) {
+                transport = new XMLHttpRequest();
+            } else {
+                try {
+                    transport = new ActiveXObject("MSXML.XMLHTTP.6.0");
+                } catch (e) { }
+                try {
+                    transport = new ActiveXObject("MSXML.XMLHTTP");
+                } catch (e) { }
+            }
+            //如果成功创建XMLHttpRequest对象实例，则通过对象向服务器发送请求
+            if (transport) {
+                transport.open("GET", "http://www.baidu.com", true);
+                transport.onreadystatechange = function() {
+                    console.log("响应事件");
+                }
+                transport.send();
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

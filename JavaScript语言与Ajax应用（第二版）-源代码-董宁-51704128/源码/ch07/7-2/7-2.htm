@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>7-2</title>
+    <style type="text/css">
+        p.neat {
+            display: none;
+            clear: both;
+            margin: 1em 0;
+            padding: 1em 15px;
+            background: #0F67A1;
+            width: 200px;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            function btnClick() {
+                $("p.neat").addClass("ohmy").show("slow");
+            }
+            
+            $("#btn").bind("click", btnClick);
+        }
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="显示段落" /><br/>
+    <p class="neat"><strong>Congratulations!</strong> You just ran a snippet of jQuery code. Wasn't that easy? There's lots of example code throughout the documentation on the site(http://docs.jquery.com/). Be sure to give all the code a test run to see what happens.</p>
+</body>
+</html>

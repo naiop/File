@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>5-3</title>
+    <style type="text/css">
+        li {
+            padding:80px 20px;
+            width:200px;
+            list-style:none;
+            float:left;
+            border:1px solid blue;
+            text-align:center;
+        }
+    </style>
+    <script type="text/javascript">
+        function checkPiece(evt){
+            var evt = evt || window.event;
+            var target = evt.target || evt.srcElement;
+            alert(target.innerHTML);
+        }
+        window.onload=function(){
+            var el = document.getElementById('pieces');
+            el.onclick = checkPiece;
+        }
+    </script>
+    </head>
+    <body>
+        <ul id="pieces">
+            <li>鲨鱼</li>
+            <li>狮子</li>
+            <li>老虎</li>
+            <li>大象</li>
+            <li>海豚</li>
+            <li>松鼠</li>
+            <li>犀牛</li>
+            <li>斑马</li>
+        </ul>
+    </body>
+</html>

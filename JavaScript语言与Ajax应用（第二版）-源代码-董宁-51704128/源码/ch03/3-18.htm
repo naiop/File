@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>使用concat()方法连接数组</title>
+		<script type="text/javascript">
+			function printArray(arrayName)
+			{
+				var strArray="";
+				for(var i=0;i<arrayName.length;i++)
+				{
+					strArray+="myArray["+i+"]="+arrayName[i]+"    ";
+				}
+				console.log(strArray);
+			}
+			var myArray=new Array("First","Second","Third");
+			var arrayAdd1=new Array("Forth","Fifth");
+			var arrayAdd2=new Array("Sixth");
+			console.log("原始数组：");
+			printArray(myArray);
+			console.log("连接数组1：");
+			printArray(arrayAdd1);
+			console.log("连接数组2：");
+			printArray(arrayAdd2);
+			console.log("连接后产生的新数组：");
+			var myNewArray=myArray.concat(arrayAdd1,arrayAdd2);
+			printArray(myNewArray);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
