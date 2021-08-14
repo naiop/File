@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT ENTER_NAME_OF_ROOT_ELEMENT_HERE EMPTY>
+<!ELEMENT 乌龟介绍 (乌龟+)>
+<!ELEMENT 乌龟 (体长,形态特征,原产地)>
+<!ELEMENT 体长 (#PCDATA)>
+<!ELEMENT 形态特征 (#PCDATA)>
+<!ELEMENT 原产地 (#PCDATA)>

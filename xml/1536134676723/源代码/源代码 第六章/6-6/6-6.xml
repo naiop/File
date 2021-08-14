@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312"?>
+<students>
+   <student>
+     <class>软件技术</class>
+     <SID>201613320</SID>
+     <name>张丽</name>
+     <sex>女</sex>
+   </student>
+   <student >
+     <class>网络技术</class>
+<SID>201624678</SID>
+     <name>杨洋</name>
+     <sex>男</sex>
+   </student>
+</students>

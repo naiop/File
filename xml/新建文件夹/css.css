@@ -1,0 +1,23 @@
+sg,mulu,sggs,biaoti,zuozhe,wenben,VERSE
+{
+display:block;
+text-align:center;
+
+}
+mulu{
+ font-size:40px;
+}
+biaoti{
+ text-decoration:underline;
+}
+wenben{
+ margin-top:10px;
+}
+
+sggs{
+border:8px;
+border-style:solid;
+border-color:#cccccc;
+margin-bottom:20px;
+background-color:#FAFAD2;
+}

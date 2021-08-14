@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!ELEMENT 书名 (#PCDATA)>
+<!ELEMENT 出版社 (#PCDATA)>
+<!ELEMENT 主编 (#PCDATA)>
+<!ELEMENT 定价 (#PCDATA)>
+<!ELEMENT 数量 (#PCDATA)>
+<!ATTLIST 学院 院名 CDATA #REQUIRED>
+<!ELEMENT 学院 (书名,出版社,主编,定价,数量)*>
+<!ELEMENT 订书信息 (学院)>

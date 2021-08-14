@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="城市列表">
+<xs:complexType>
+<xs:sequence maxOccurs="unbounded">
+<xs:element name="城市" type="城市类型"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="城市类型">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="名称" type="城市称呼" />
+<xs:element name="级别" type="城市级别" />
+<xs:element name="人口数目" type="xsd:string"/>
+</xs:sequence>
+<xs:attribute name="别名" type=" xsd:string " use="required"/>
+</xs:complexType>
+  </xs:element>
+<xs:simpleType name="城市称呼">
+<xs:restriction base="xsd:string">
+<xs:minLength value="2" />
+<xs:maxLength value="10" />
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="城市级别">
+<xs:restriction base="xsd:string">
+<xs:enumeration value="直辖市" />
+<xs:enumeration value="副省级" />
+<xs:enumeration value="地级" />
+<xs:enumeration value="县级" />
+</xs:restriction>
+</xs:simpleType>
+ </xs:schema>

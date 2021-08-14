@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<学生 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="student.xsd">
+      <学生信息 姓名="王鹏" 系别="计算机科学系" 政治面貌="团员"></学生信息>
+</学生>

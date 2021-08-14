@@ -1,0 +1,19 @@
+<html>
+<head><title>数据绑定</title></head>
+<body>
+<h3 align=center>数据岛绑定实例</h3>
+<xml id="XMLData" src="6-4.xml"></xml>
+    <table id="tblbooks" datasrc="#XMLData" border=1 datapagesize=2 width="100%">
+       <thead>
+        <th style="font-style: blod">姓名</th>
+        <th style="font-style: blod">语文成绩</th>
+        <th style="font-style: blod">数学成绩</th>
+       </thead>
+       <tr>
+        <td><span datafld="姓名"></span></td>
+        <td><span datafld="语文成绩"></span></td>
+        <td><span datafld="数学成绩"></span></td>
+        
+       </tr>
+      </table>
+</body></html>

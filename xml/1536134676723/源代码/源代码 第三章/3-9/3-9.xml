@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GB2312" ?>
+    <!DOCTYPE 班级 [
+      <!ELEMENT 班级 (老师+,学生*)>
+      <!ELEMENT 老师 EMPTY>
+      <!ELEMENT 学生 EMPTY>
+      <!ATTLIST 老师
+        名字 CDATA #REQUIRED
+        性别 (男|女) #REQUIRED
+        年龄 CDATA #REQUIRED
+        籍贯 CDATA #IMPLIED
+      >
+      <!ATTLIST 学生
+          名字 CDATA #REQUIRED
+          年龄 CDATA #REQUIRED
+          籍贯 CDATA #IMPLIED
+        >
+    ]> 
+    <班级>
+      <老师   名字="张荣" 性别="男" 年="35" 籍贯="重庆" />
+      <老师   名字="肖萍" 性别="女" 年="45" 籍贯="江西"/>
+      <学生 名字="刘江" 年龄="13" 籍贯="四川" />
+     <学生 名字="章爱萍" 年龄="13" 籍贯="湖北" />
+     <学生 名字="宋静" 年龄="12" 籍贯="重庆" />
+     <学生 名字="邱中" 年龄="14" 籍贯="重庆" />
+    <学生 名字="董智慧" 年龄="12" 籍贯="新疆" />
+    </班级>
+    

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gb2312"?>
+   <!--7-11.xml-->
+   <?xml-stylesheet href="7-11.xsl" type="text/xsl"?>
+   <books>
+   <book id="1">
+     <name>西游记</name>
+     <publisher>人民文学出版社</publisher>
+   </book>
+   <book id="2">
+     <name>三国演义</name>
+     <publisher>人民文学出版社</publisher>
+   </book>
+   <book id="3">
+     <name>红楼梦</name>
+     <publisher>人民文学出版社</publisher>
+   </book>
+   <book id="4">
+     <name>水浒传</name>
+     <publisher>人民文学出版社</publisher>
+   </book>
+  </books>
+

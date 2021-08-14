@@ -1,0 +1,32 @@
+<!-- File Name:7-3.html-->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<TITLE>客户信息</TITLE>
+<SCRIPT LANGUAGE="JavaScript" FOR="Window" EVENT="ONLOAD">
+var xmldoc=new ActiveXObject("MSXML.DOMDocument");
+xmldoc.async="false";
+xmldoc.load("7-3.xml");
+HTMLCode="";
+for (var i=0;i<xmldoc.documentElement.childNodes.length;i++)
+{
+HTMLCode +=
+"<SPAN STYLE='font-style:italic'>公司名称：</SPAN>"
++xmldoc.documentElement.childNodes(i).childNodes(0).text+"<BR>"
+"<SPAN STYLE='font-style:italic'>联系人：</SPAN>"
++xmldoc.documentElement.childNodes(i).childNodes(1).text+"<BR>"
+"<SPAN STYLE='font-style:italic'>职位：</SPAN>"
++xmldoc.documentElement.childNodes(i).childNodes(2).text+"<BR>"
+"<SPAN STYLE='font-style:italic'>地址：</SPAN>"
++xmldoc.documentElement.childNodes(i).childNodes(3).text+"<BR>"
+"<SPAN STYLE='font-style:italic'>电话：</SPAN>"
++xmldoc.documentElement.childNodes(i).childNodes(4).text+"<BR>";
+}
+DisplayDIV.innerHTML=HTMLCode;
+</SCRIPT>
+</HEAD>
+</BODY>
+<H3>客户信息</H3>
+<DIV ID="DisplayDIV"></DIV>
+</BODY>
+</HTML>

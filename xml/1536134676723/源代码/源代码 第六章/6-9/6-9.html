@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>分页显示</title>
+</head>
+<body onload="ViewRecords()">
+<xml id="dso" src="6-9.xml"></xml>
+<script language = "JavaScript">
+function ViewRecords()
+{
+   products.dataPageSize=1;
+   products.firstPage();
+}
+function FirstPage()
+{products.firstPage();}
+function NextPage()
+{products.nextPage();}
+function LastPage()
+{products.lastPage();}
+function PrevPage()
+{products.previousPage();}
+</script>
+<h3 align="center">分页显示数据</h3>
+<table id="products" datasrc="#dso" width= "80%" align="center" cellpadding= "0" cellspacing = "0" border= "1">
+<thead>
+<th>图片</th>
+<th>描述</th>
+</thead>
+<tr>
+<td><img datafld="地址"/></td>
+<td><div datafld="描述"/></td>
+
+</tr>
+</table>
+<center>
+<input type="button" value="第一页" onclick="FirstPage()">
+<input type="button" value="上一页" onclick="PrevPage()">
+<input type="button" value="下一页" onclick="NextPage()">
+<input type="button" value="最后一页" onclick="LastPage()">
+<BR></BR>
+</center>
+</body>
+</html>

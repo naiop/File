@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* file name 5-4-1.css */
+book
+{
+	display:block;
+	margin-top:16px	
+}
+title
+{
+	font-style:italic	
+}
+author
+{
+	font-weight:bold
+}
+price
+{
+	display:none
+}

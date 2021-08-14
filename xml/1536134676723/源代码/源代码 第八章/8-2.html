@@ -1,0 +1,20 @@
+<html>
+<body>
+<h1>JSON 创建对象</h1>
+<p>
+First Name: <span id="firstname"></span><br /> 
+Last Name: <span id="lastname"></span><br /> 
+</p> 
+<script type="text/javascript">
+var txt = '{"studends":[' +
+'{"firstName":"lily","lastName":"Gates" },' +
+'{"firstName":"George","lastName":"Bush" },' +
+'{"firstName":"leslie","lastName":"ben" }]}';
+
+var obj = eval ("(" + txt + ")");
+
+document.getElementById("firstname").innerHTML=obj.studends[2].firstName 
+document.getElementById("lastname").innerHTML=obj.studends[2].lastName 
+</script>
+</body>
+</html>

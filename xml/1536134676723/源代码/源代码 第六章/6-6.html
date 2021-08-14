@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+	<TITLE>显示XML记录的属性</TITLE>
+</HEAD>
+<BODY>
+	<XML ID="dsoStudents" SRC="6-6.xml "></XML>
+	<CENTER>
+	<H2>学生信息表</H2>
+	<TABLE  DATASRC="# dsoStudents "  BORDER="1"  CELLPADDING="5">
+		<THEAD>
+			<TH>class</TH>
+			<TH>SID</TH>
+			<TH>name</TH>
+			<TH>sex</TH>
+		</THEAD>
+		<TR ALIGN="center">
+			<TD><SPAN DATAFLD="class"></SPAN></TD>
+			<TD><SPAN DATAFLD="SID"></SPAN></TD>
+			<TD><SPAN DATAFLD="name"></SPAN></TD>
+			<TD><SPAN DATAFLD="sex"></SPAN></TD>
+		</TR>
+	</TABLE>
+	</CENTER>
+</BODY>
+</HTML>

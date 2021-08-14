@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<?xml-stylesheet type="text/xsl" href="student.xsl"?>
+<roster>
+	<student class="金融">
+		<SN>2005133110</SN>
+		<name>张列</name>
+		<sex>男</sex>
+		<birthday>1986.10.21</birthday>
+		<score>605</score>
+	</student>
+	<student class="金融">
+		<SN>2005133115</SN>
+		<name>吴茗芳</name>
+		<sex>女</sex>
+		<birthday>1985.8.25</birthday>
+		<score>596</score>
+	</student>
+	<student class="国际金融">
+		<SN>2005131136</SN>
+		<name>周颖</name>
+		<sex>女</sex>
+		<birthday>1986.5.28</birthday>
+		<score>611</score>
+	</student>
+	<student class="保险">
+		<SN>2005132012</SN>
+		<name>陈旭东</name>
+		<sex>男</sex>
+		<birthday>1986.6.19</birthday>
+		<score>602</score>
+	</student>
+	<student class="金融">
+		<SN>2005133108</SN>
+		<name>夏凡</name>
+		<sex>女</sex>
+		<birthday>1987.3.15</birthday>
+		<score>581</score>
+	</student>
+</roster>

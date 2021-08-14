@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 记事本[
+    <!ELEMENT 记事本 (收邮件人,寄邮件人,标题,正文)>
+    <!ELEMENT 收邮件人 (#PCDATA)>
+    <!ELEMENT 寄邮件人 (#PCDATA)>
+    <!ELEMENT 标题 (#PCDATA)>
+    <!ELEMENT 正文 (#PCDATA)>
+]>
+   <记事本>
+       <收邮件人>小明</收邮件人>
+       <寄邮件人>李雷</寄邮件人>
+       <标题>约会</标题>
+       <正文>这周周末来我家玩，不要忘记了!</正文>
+   </记事本>

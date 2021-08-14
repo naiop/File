@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gb2312"?>
+<class grade="五年级一班" classroom="0201">
+   <student id="30101">
+     <mark type="语文">91</mark>
+     <mark type="数学">98</mark>
+     <mark type="英语">95</mark>
+   </student>
+   <student id="30102">
+     <mark type="语文">68</mark>
+     <mark type="数学">97</mark>
+     <mark type="英语">90</mark>
+   </student>
+   <student id="30103">
+     <mark type="语文">86</mark>
+     <mark type="数学">89</mark>
+     <mark type="英语">68</mark>
+   </student>
+   <student id="30104">
+     <mark type="语文">88</mark>
+     <mark type="数学">92</mark>
+     <mark type="英语">78</mark>
+   </student>
+   <student id="30105">
+     <mark type="语文">89</mark>
+     <mark type="数学">96</mark>
+     <mark type="英语">90</mark>
+   </student>
+</class>
+

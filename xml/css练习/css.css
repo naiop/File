@@ -1,0 +1,32 @@
+
+xslist,xs,banji,stu
+{
+  display:block;
+  font-family:¡• È;
+ letter-spacing:2px;
+}
+banji{
+  font-size:28pt;
+  color:blue;
+  border-bottom:solid;
+  border-bottom-color:#faa755;
+}
+xs{
+  border-style:solid;
+  border-color:#000000;
+  margin-top:20px;
+  
+}
+stu{
+ display:list-item;
+ list-style:none inside url(P1.gif);
+}
+xs#a{
+background-color:#7bbfea;
+}
+xs#b{
+background-color:#df9464;
+}
+xs#c{
+background-color:#f3704b;
+}

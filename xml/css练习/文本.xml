@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="css.css" type="text/css"?>
+<xslist>
+<xs id="a">
+  <banji>过控171班</banji>
+  <stu>201705350201，胡一刀，女</stu>
+  <stu>201705350202，张三丰，男</stu>
+</xs>
+
+<xs id="b">
+  <banji>过控172班</banji>
+  <stu>201705350203，洪七公，女</stu>
+  <stu>201705350204，茅十八，男</stu>
+</xs>
+
+<xs id="c">
+  <banji>过控171班</banji>
+  <stu>201705350205，阿九，男</stu>
+  <stu>201705350206，百万剑，男</stu>
+</xs>
+</xslist>

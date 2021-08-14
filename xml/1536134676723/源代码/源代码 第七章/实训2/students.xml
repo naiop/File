@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!--students.xml -->
+<?xml-stylesheet type="text/xsl" href="students.xsl"?>
+<students desc="某班级部分学生年龄">
+  <student name="张然" id="00123" >
+    <age>20</age>
+  </student>
+  <student name="王玉晓" id="00124" >
+    <age>21</age>
+  </student>
+  <student name="张玉良" id="00129" >
+    <age>19</age>
+  </student>
+<student name="邓宇" id="00129" >
+    <age>18</age>
+  </student>
+</students>
+

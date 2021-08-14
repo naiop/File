@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="学生">
+      <xs:complexType>
+      
+        <xs:attribute name="姓名" type="xsd:string" use="required"/>
+        <xs:attribute name="系别" type="系别列表" use="required"/>
+      <xs:attribute name="政治面貌" type="政治面貌列表" use="required"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:simpleType name="系别列表">
+     <xs:restriction base="xsd:string">
+       <xs:enumeration value="中文系"/>
+       <xs:enumeration value="计算机科学系"/>
+      <xs:enumeration value="化学学系"/>
+     <xs:enumeration value="管理系"/>
+       <xs:enumeration value="数学系"/>
+     </xs:restriction>
+   </xs:simpleType>
+  <xs:simpleType name="政治面貌列表">
+     <xs:restriction base="xsd:string">
+       <xs:enumeration value="群众"/>
+       <xs:enumeration value="党员"/>
+       <xs:enumeration value="团员"/>
+     </xs:restriction>
+   </xs:simpleType>
+ </xs:schema>

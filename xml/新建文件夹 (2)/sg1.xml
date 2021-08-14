@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<?xml-stylesheet href="css.css" type="text/css"?>
+<POEM>
+	<TITLE>人生易老天难老
+		<SUBTITLE>——日子都到哪里去了？</SUBTITLE>
+	</TITLE>
+	<AUTHOR>作者：未名</AUTHOR>
+	<SECTION>
+	<STANZA>
+		<VERSE>燕子去了，有再来的时候；</VERSE>
+		<VERSE>杨柳枯了，有再青的时候；</VERSE>
+		<VERSE>桃花谢了，有再芬芳的时候。</VERSE>
+		<VERSE>但是，聪明的你，请告诉我，
+			日子一去怎么不复返呢？</VERSE>
+	</STANZA> 
+	<STANZA> 
+		<VERSE>是有人偷走了他们吧，那是谁？又藏在何处？</VERSE>
+		<VERSE>是他们自己逃走了吧？现在又到了哪里？</VERSE>
+	</STANZA> 
+	</SECTION> 
+</POEM>

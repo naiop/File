@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File Name:xiti7.xml -->
+<?xml-stylesheet href="xiti7.xsl" type="text/xsl"?>
+<roster>
+<student class="计算机网络">
+<SN>1001</SN>
+<name>孙猴子</name>
+<sex>男</sex>
+<birthday>1994.10.21</birthday>
+<score>605</score>
+</student>
+<student class="计算机网络">
+<SN>1002</SN>
+<name>吴君如</name>
+<sex>女</sex>
+<birthday>1995.8.25</birthday>
+<score>596</score>
+</student>
+<student class="信息管理">
+<SN>1003</SN>
+<name>周海媚</name>
+<sex>女</sex>
+<birthday>1996.5.28</birthday>
+<score>611</score>
+</student>
+<student class="云计算及应用">
+<SN>1004</SN>
+<name>陈旭东</name>
+<sex>男</sex>
+<birthday>1996.6.19</birthday>
+<score>602</score>
+</student>
+<student class="计算机应用">
+<SN>1005</SN>
+<name>夏一凡</name>
+<sex>女</sex>
+<birthday>1995.3.15</birthday>
+<score>581</score>
+</student>
+</roster>

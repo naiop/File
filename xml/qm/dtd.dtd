@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 图书信息表[
+<!ELEMENT 图书信息表 (图书类别,书目编号,书名,价格,出版社名称)>
+<!ELEMENT 图书类别 (#PCDATA)>
+<!ELEMENT 书目编号 (#PCDATA)>
+<!ELEMENT 书名 (#PCDATA)>
+<!ELEMENT 价格 (#PCDATA)>
+<!ELEMENT 出版社名称 (#PCDATA)>
+]>
+

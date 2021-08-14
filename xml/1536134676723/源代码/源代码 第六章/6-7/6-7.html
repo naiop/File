@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+	<TITLE>显示XML字段的属性</TITLE>
+</HEAD>
+<BODY>
+	<xml id="XMLData" src="6-7.xml"></xml>
+	<CENTER>
+	<H2>学生信息表</H2>
+	<TABLE DATASRC="#xmldata"  BORDER="1"  CELLPADDING="2">
+		<THEAD>
+			<TH>class</TH>
+			<TH>SID</TH>
+			<TH>name</TH>
+                               <TH>birthday</TH>
+			<TH>sex</TH>
+		</THEAD>
+		<TR ALIGN="center">
+			<TD><SPAN DATAFLD="class"></SPAN></TD>
+<TD><SPAN DATAFLD="SID"></SPAN></TD>
+			<TD>
+			<TABLE  DATASRC="#xmldata" DATAFLD="name">
+				<TR>
+					<TD><SPAN DATAFLD="$TEXT"></SPAN></TD>
+					
+				</TR>
+			</TABLE>
+			</TD>
+                        <TD>
+			<TABLE  DATASRC="#xmldata" DATAFLD="name">
+				<TR>
+					<TD><SPAN DATAFLD="birthday"></SPAN></TD>
+					
+				</TR>
+			</TABLE>
+			</TD>
+		    <TD><SPAN DATAFLD="sex"></SPAN></TD>
+		</TR>
+	</TABLE>
+	</CENTER>
+</BODY>
+</HTML>

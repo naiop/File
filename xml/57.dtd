@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT ENTER_NAME_OF_ROOT_ELEMENT_HERE EMPTY>
+<!ELEMENT 班级 (教师+,学生+)>
+<!ELEMENT 教师 (姓名,任教科目,性别)>
+<!ATTLIST 教师 教师编号 ID #REQUIRED>
+<!ELEMENT 学生 (姓名)>
+<!ATTLIST 学生 系别 CDATA #FIXED "计算机系">
+<!ATTLIST 学生 班主任 CDATA "李红">
+<!ATTLIST 学生 性别 (男|女) #REQUIRED>
+<!ATTLIST 学生 学号 ID #REQUIRED>
+<!ELEMENT 姓名 (#PCDATA)>
+<!ELEMENT 任教系别 (#PCDATA)>
+<!ELEMENT 任教科目 (#PCDATA)>
+<!ELEMENT 性别 (#PCDATA)>

@@ -1,0 +1,29 @@
+<!-- File Name:7-2.html-->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <TITLE>客户信息</TITLE>
+  <script language="javascript"  FOR="window" EVENT="ONLOAD">
+  Document=dsoCustomer.XMLDocument;
+  公司名称.innerText=documentElement.childNodes(0).text;
+  联系人.innerText=documentElement.childNodes(1).text;
+  职位.innerText=documentElement.childNodes(2).text;
+  地址.innerText=documentElement.childNodes(3).text;
+  电话.innerText=documentElement.childNodes(4).text;
+  </SCRIPT>
+</HEAD>
+<BODY>
+  <XML ID="dsoCustomer" SRC="7-1.xml"></XML>
+  <H3>客户信息</H3>
+  <SPAN STYLE="font-style:italic">公司名称:</SPAN>
+  <SPAN ID="公司名称" STYLE="font-weight:bold"></SPAN><BR>
+  <SPAN STYLE="font-style:italic">联系人:</SPAN>
+  <SPAN ID="联系人"></SPAN><BR>
+  <SPAN STYLE="font-style:italic">职位:</SPAN>
+  <SPAN ID="职位"></SPAN><BR>
+  <SPAN STYLE="font-style:italic">地址:</SPAN>
+  <SPAN ID="地址"></SPAN><BR>
+  <SPAN STYLE="font-style:italic">电话:</SPAN>
+  <SPAN ID="电话"></SPAN>
+</BODY>
+</HTML>

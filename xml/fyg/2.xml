@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<?xml-stylesheet href="css.css" type="text/css"?>
+<POEM>
+
+	<TITLE>文学类</TITLE>
+	<SECTION>
+	<STANZA>
+		<VERSE>福尔摩斯探案全集</VERSE>
+		<VERSE>朝华出版社；</VERSE>
+		<VERSE>桃花谢了，有再芬芳的时候。</VERSE>
+		<VERSE>但是，聪明的你，请告诉我，
+			日子一去怎么不复返呢？</VERSE>
+	</STANZA> 
+	<STANZA> 
+		<VERSE>是有人偷走了他们吧，那是谁？又藏在何处？</VERSE>
+		<VERSE>是他们自己逃走了吧？现在又到了哪里？</VERSE>
+	</STANZA> 
+	</SECTION> 
+</POEM>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!--file name:shixun1.xml-->
+<?xml-stylesheet href="shixun1.css" type="text/css"?>
+<work>
+<title>火锅英雄招贤纳士</title>
+<content>
+<item>
+<head>服务员10名</head>
+<obtain>一年以上工作经验，沟通能力强。底薪1000-2000元/月。
+</obtain>
+</item>
+<item>
+<head>配菜师傅3名</head>
+<obtain>具有3年以上相关工作经验，能吃苦耐劳。底薪2000-3000元/月。
+</obtain>
+</item>
+<item>
+<head>收银员2名</head>
+<obtain>有会计相关工作经验，细心。底薪2000-4000元/月。
+</obtain>
+</item>
+</content>
+<connection>
+<address>重庆市江北区红石路255号</address>
+<email>电子邮件：net123@163.com</email>
+<tel>联系方式：023-66661111</tel>
+</connection>
+</work>

@@ -1,0 +1,27 @@
+<script language="JavaScript">
+//定义变量XMLDoc
+var XMLDoc;
+//将该变量赋予XML Document对象类型
+XMLDoc=new ActiveXObject("Microsoft.XMLDOM");
+//禁止异步加载。即当文档加载完毕后，控制权才会返回给调用进程
+XMLDoc.async=false;
+//加载例6-1创建的XML文档
+XMLDoc.load("7-7.xml");
+//定义变量root
+var root;
+//将root赋予XML文档根元素所对应的节点
+root=XMLDoc.documentElement;
+//定义变量studentNode
+var studentNode;
+//将studentNode赋予根元素的第一个孩子节点
+studentNode=root.childNodes.item(0);
+for(var i=0;i<studentNode.childNodes.length;i++)
+{
+	if(studentNode.childNodes(i).text=="李达康")
+	{
+		alert("找到姓名为李达康的学生！");
+}
+i= studentNode.childNodes.length;
+}
+</script>
+

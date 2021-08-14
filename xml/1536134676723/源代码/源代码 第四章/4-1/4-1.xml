@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<图书 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="4-1.xsd">      
+  <书名>红楼梦</书名>
+  <作者>曹雪芹</作者>
+  <主要内容>描写贾宝玉与林黛玉的爱情故事及大家族的没落</主要内容>
+  <出版社>人民文学出版社</出版社>    
+  </图书>

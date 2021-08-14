@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="汽车">
+    		<xs:complexType>
+			<xs:attribute name="品牌" type="xs:string" use="required"/>
+			<xs:attribute name="排量" type="xs:float" use="required"/>
+			<xs:attribute name="价格" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="品牌">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="福特"/>
+			<xs:enumeration value="大众"/>
+			<xs:enumeration value="丰田"/>
+			<xs:enumeration value="标致"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="排量">
+		<xs:restriction base="xs:float">
+			<xs:enumeration value="1.0"/>
+			<xs:enumeration value="1.5"/>
+			<xs:enumeration value="2.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="价格">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="10万元下"/>
+			<xs:pattern value="10万元以上"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,17 @@
+<html>
+<head><title>数据绑定</title></head>
+<body>
+<xml id="xmldata">
+<?xml version="1.0" encoding="GB2312"?>
+            <book>
+                <name>红楼梦</name>
+                <author>曹雪芹</author>
+                <date>2017-03-23</date>
+            </book>
+</xml>
+<h2>绑定的数据</h2>
+书名：<span datasrc="#xmldata" datafld="name"></span><br/>
+作者：<span datasrc="#xmldata" datafld="author"></span><br/>
+出版日期：<span datasrc="#xmldata" datafld="date"></span><br/>
+</body>
+</html>

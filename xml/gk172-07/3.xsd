@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="研究生名单">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="研究生" type="研究生列表"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="研究生列表">
+		<xs:sequence>
+			<xs:element name="学号" type="xs:string"/>
+			<xs:element name="姓名" type="xs:string"/>
+			<xs:element name="专业" type="专业列表"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="专业列表">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="计算机系"/>
+			<xs:enumeration value="管理系"/>
+			<xs:enumeration value="电子系"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

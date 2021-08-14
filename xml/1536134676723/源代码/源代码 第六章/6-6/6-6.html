@@ -1,0 +1,20 @@
+<html>
+<head><title>数据绑定</title></head>
+<body>
+<h3 align=center>数据岛绑定实例</h3>
+<xml id="XMLData" src="6-6.xml"></xml>
+    <table id="tblbooks" datasrc="#XMLData" border=1 datapagesize=2 width="100%">
+       <thead>
+        <th style="font-style: blod">班级</th>
+        <th style="font-style: blod">学号</th>
+        <th style="font-style: blod">姓名</th>
+ <th style="font-style: blod">性别</th>
+       </thead>
+       <tr>
+        <td><span datafld="class"></span></td>
+        <td><span datafld="SID"></span></td>
+        <td><span datafld="name"></span></td>
+         <td><span datafld="sex"></span></td>
+       </tr>
+      </table>
+</body></html>

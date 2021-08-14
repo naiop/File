@@ -1,0 +1,74 @@
+@charset "gb2312";
+/* CSS Document */
+work
+{
+border:dotted;
+border-bottom-color:#000000;
+border-width:1px;
+width:300px;
+text-align:center;
+height:260px
+}
+title
+{
+padding-top:10px;
+background-color:#0099CC;
+color:#CC0000;
+font-size:25pt;
+font-weight:900;
+text-align:center;
+width:100%;
+height:20%
+}
+content
+{
+background-color:#FFFFCC;
+width:100%;
+height:60%
+}
+item head
+{
+background-color:lavender;
+text-indent:15pt;
+display:list-item;
+font-family:宋体;
+color:#FF0000
+}
+item obtain
+{
+padding-left:20pt;
+font-family:楷体_gb2312;
+font-size:10pt
+}
+connection address
+{
+border-bottom:3px double gray;
+background-color:#0099CC;
+color:#FFFFFF;
+font-size:10pt;
+width:100%;
+height:8%;
+display:block;
+text-align:center
+}
+connection email
+{
+border-bottom:1px dotted green;
+background-color:#0099CC;
+color:#CCFFCC;
+font-size:10pt;
+width:100%;
+height:6%;
+display:block;
+text-align:center
+}
+connection tel
+{
+background-color:#0099CC;
+color:#FFFFFF;
+font-size:10pt;
+width:100%;
+height:6%;
+text-align:center
+}
+

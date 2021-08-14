@@ -1,0 +1,31 @@
+@charset "gb2312";
+/*File Name:xiti6.css */
+poetry
+{text-align:center}
+poetry,title,author,content,verse
+{display:block}
+poetry
+{margin:8px;
+border:10px solid gray;
+padding:6px;
+backgroud-color:gold)
+}
+title
+{font-size:160%;
+font-family:华文行楷;
+font-weight:200;
+text-align:center}
+poetry title
+{font-size:12pt;
+text-decoration:underline;
+font-family:黑体}
+author
+{font-family:隶书;
+font-weight:normal;
+font-style:italic}
+content
+{font-size:10pt;
+margin-top:.5em}
+
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!DOCTYPE 家居 [
+<!ELEMENT 电器 (电脑*,电视*) >
+<!ELEMENT 电脑 (品牌,价格)>
+<!ELEMENT 电视 (#PCDATA)>
+<!ELEMENT 品牌 (#PCDATA)>
+<!ELEMENT 价格 (#PCDATA)>
+]>
+<家居 >
+  <电脑>
+    <品牌>联想</品牌>
+    <价格>3500</价格>
+  </电脑>
+  <电视>TCL</电视>
+  <电视>海尔</电视>
+</家居>
+
+
+
+
+
+

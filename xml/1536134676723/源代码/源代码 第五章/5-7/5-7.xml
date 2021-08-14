@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GB2312"?>
+<?xml-stylesheet type="text/xsl" href="5-7.xsl"?>
+<shoppingCart>
+<item>
+<itemNO>1001</itemNO>
+<itemName>老人与海</itemName>
+<price>45.00</price>
+<publisher>海外出版社</publisher>
+</item>
+<item>
+<itemNO>1002</itemNO>
+<itemName>傲慢与偏见</itemName>
+<price>50.00</price>
+<publisher>海外出版社</publisher>
+</item>
+<item>
+<itemNO>1003</itemNO>
+<itemName>百年孤独</itemName>
+<price>40.00</price>
+<publisher>海外出版社</publisher>
+</item>
+</shoppingCart>

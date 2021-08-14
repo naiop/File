@@ -1,0 +1,31 @@
+@charset "utf-8";
+book
+{
+color:black;
+margin-top:16px;
+background:#cccccc;
+font:normal small-caps bolder 15pt 宋体
+}
+title
+{
+display:block;
+font-size:30px;
+font-family:楷体_GB2312
+}
+author
+{
+font-family:黑体;
+margin:6px;
+color:#ff0066;
+display:block	
+}
+publisher
+{
+color:#66ccff; 
+display:block	
+}
+price
+{
+font-size:10pt;
+display:block
+}

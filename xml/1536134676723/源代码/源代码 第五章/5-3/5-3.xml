@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="5-3.css" type="text/css"?>
+<maps>
+ <city>北京</city>
+ <city>上海</city>
+ <city>天津</city>
+ <city>重庆</city>
+ <province>
+      河南
+	  <city>郑州</city>
+ </province>
+  <province>
+      四川
+	  <city>成都</city>
+ </province>
+</maps>

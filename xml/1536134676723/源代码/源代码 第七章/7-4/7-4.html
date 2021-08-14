@@ -1,0 +1,38 @@
+<!-- File Name:7-4.html-->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<TITLE>据元素名查询</TITLE>
+<script LANGUAGE="JavaScript">
+function ShowElements()
+{
+/*确保用户已将要查询元素的名称输入文本框:*/
+if(ElementName.value=="")
+{
+alert("你必须在文本框中输入要查询的元素名!");
+return;
+}
+/*获得文档中所有匹配元素的节点集合:*/
+Document=dsoCustomer.XMLDocument;
+NodeList=Document.getElementsByTagName(ElementName.value);
+/*将所有匹配元素节点的XML标记和内容存入变量ResultHTML:*/
+ResultHTML="";
+for(var i=0;i<NodeList.length;i++)
+ResultHTML +=NodeList(i).xml+"\n \n";
+/*将存储的查询结果赋给DIV标记的innerText属性:*/
+if(ResultHTML=="")
+alert("未能找到相匹配的元素!");
+else 
+ResultDIV.innerText=ResulthHTML;
+}
+</script>
+</HEAD>
+<BODY>
+<XML ID="dsoCustomer" SRC="7-3.xml"></XML>
+<H3>依据元素名称查询元素内容</H3>
+请输入元素名称:<INPUT TYPE="TEXT" ID="ElementName">&nbsp;
+<BUTTON ONCLICK="ShowElements()">查询</BUTTON>
+<HR>
+<DIV ID=ResultDIV></DIV>
+</BODY>
+</HTML>

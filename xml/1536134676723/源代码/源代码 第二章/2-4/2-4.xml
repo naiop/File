@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<books xmlns="http://www.itzcn.com"
+  xmlns:subject="http://www.demo.com">
+
+  <subject:book bookname="XML高级编程">
+  <subject:description>讲述XML程序开发的高级知识</subject:description>
+  </subject:book>
+  <book bookname="XML基础入门">
+       <description>讲述XML编程基础知识</description>
+     
+  </book>
+</books>

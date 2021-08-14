@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<城市列表 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="city.xsd">
+                                                     
+ <城市 别名= "雾都">
+     <名称>重庆</名称>
+   <级别>直辖市</级别>
+   <人口数目>三千万</人口数目>
+</城市>
+ <城市 别名= "蓉城">
+     <名称>成都</名称>
+   <级别>副省级</级别>
+   <人口数目>两千万</人口数目>
+</城市>
+</城市列表>

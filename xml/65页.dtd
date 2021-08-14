@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT ENTER_NAME_OF_ROOT_ELEMENT_HERE EMPTY>
+<!ELEMENT 学校信息 (系部,班主任,专业)>
+<!ELEMENT 系部 (#PCDATA)>
+<!ELEMENT 系主任 (#PCDATA)>
+<!ELEMENT 专业 (软件技术, 网络技术)>
+<!ELEMENT 软件技术 (一年级,二年级,三年级)>
+<!ELEMENT 网络技术 (一年级,二年级,三年级)>
+<!ELEMENT 一年级 (班级,班主任,任课老师+,班长)>
+<!ELEMENT 二年级 (班级,班主任,任课老师+,班长)>
+<!ELEMENT 三年级 (班级,班主任,任课老师+,班长)>
+<!ELEMENT 班级 (#PCDATA)>
+<!ELEMENT 班主任 (#PCDATA)>
+<!ELEMENT 任课老师 (#PCDATA)>
+<!ELEMENT 班长 (#PCDATA)>

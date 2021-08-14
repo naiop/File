@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!ELEMENT 姓名 (#PCDATA)>
+<!ELEMENT 性别 EMPTY>
+<!ATTLIST 性别 value (男|女) "男">

@@ -1,0 +1,30 @@
+<html>
+<head>
+   <title>DSO应用</title>
+</head>
+ <xml id="dos" src="Example6.xml"></xml>
+ <body>
+  
+    <script language="javascript">
+     function view(){
+      alert(dos.xml);
+        }
+ </script>
+    <center>
+    <table datasrc="#dos" border="1"  width="40%"> 
+        <thead>
+          <tr>
+              <th>名称</th>
+              <th>联系方式</th>
+          </tr>
+        </thead>
+        <tr>
+             <td><span datafld="名称"></sapn></td>
+             <td><span datafld="联系方式"></span></td>
+        </tr>
+    </table>
+   <form>
+   <input type=button value="显示全部信息" onclick="view()">
+  </form>
+   </center>
+ </body>

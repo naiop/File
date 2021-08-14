@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--file name:5-2.xml-->
+<?xml-stylesheet href="5-2.css" type="text/css"?>
+<catelog>
+      <book  class="b001">
+	  <title>Java EE项目开发教程</title>
+	  <author>郑阿奇</author>
+	  <price>¥33</price>
+	  </book>
+	  <book>
+	  <title>XML基础教程</title>
+	  <author>高怡新</author>
+	  <price>¥26</price>
+	  </book>
+	  <book>
+	  <title>JavaScript从入门到精通</title>
+	  <author>梁春艳</author>
+	  <price>¥69</price>
+	  </book>
+</catelog>

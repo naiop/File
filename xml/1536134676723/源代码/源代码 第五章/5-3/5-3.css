@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+city
+{
+  display:block;
+  font-style:italic;
+  font-size:40pt
+}
+province city
+{
+  display:block;
+  font-style:normal;
+  font-size:25pt
+}
+

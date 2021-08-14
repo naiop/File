@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!ELEMENT 列车时刻表 (车次*)>
+<!ELEMENT 车次 (始发站点, 终点站点)>
+<!ELEMENT 始发站点 (#PCDATA)>
+<!ELEMENT 终点站点 (#PCDATA)>
+

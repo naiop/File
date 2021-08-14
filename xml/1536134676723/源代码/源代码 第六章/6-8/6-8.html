@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>HTML中的数据岛中的记录集</title>
+</head>
+<body>
+<xml id="XMLdata" src="6-8.xml"></xml>      <!--引入xml数据源-->
+<center><b><font size="3">HTML中的XML数据岛记录编辑与添加</font></b>
+</center><hr/>
+书名:<input type="text" datasrc="#XMLdata" datafld="title" size="25"><br/>
+类别:<input type="text" datasrc="#XMLdata" datafld="bookcategory" size="15"><br/>
+书号:<input type="text" datasrc="#XMLdata" datafld="ISBN" size="25"><br/>
+作者:<input type="text" datasrc="#XMLdata" datafld="author" size="25"><br/>
+出版社:<input type="text" datasrc="#XMLdata" datafld="publisher" size="23"><br/>
+定价:<input type="text" datasrc="#XMLdata" datafld="price" size="15"><br/>
+剩余数量:<input type="text" datasrc="#XMLdata" datafld="remain" size="15"><br/>
+<hr/>
+<input id="first" type="button" value="<<第一条" onclick="XMLdata.recordset.moveFirst">           <!--数据岛的基本方法-->
+<input id="prev" type="button" value="<上一条" onclick="XMLdata.recordset.movePrevious">
+<input id="next" type="button" value="下一条>" onclick="XMLdata.recordset.moveNext">
+<input id="last" type="button" value="最后一条>>" onclick="XMLdata.recordset.moveLast">
+<input id="add" type="button" value="添加" onclick="XMLdata.recordset.addNew">
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gb2312"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.w3school.com.cn"
+xmlns="http://www.w3school.com.cn"
+elementFormDefault="qualified">
+  <xs:element name="学生" minOccurs="0" maxOccurs="unbouned">
+       <xs:complexType>
+      <xs:sequence>
+        <xs:element name="姓名" type="xs:string"/>
+        <xs:element name="成绩单">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="语文" type="xs:float"/>
+              <xs:element name="数学" type="xs:float"/>
+              <xs:element name="英语" type="xs:float"/>
+              <xs:element name="综合" type="xs:float"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="成绩统计" ref="学生" />
+</xs:schema>

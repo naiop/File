@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- simple2.xml-->
+<?xml-stylesheet type="text/xsl" href="simple2.xsl"?>
+<students>
+  <student>
+    <name>陈磊</name>
+    <sex>男</sex>
+    <birthday>1996.4.23</birthday>
+  </student>
+  <student>
+    <name>杨红</name>
+    <sex>女</sex>
+    <birthday>1994.6.20</birthday>
+  </student>
+  <student>
+    <name>李海月</name>
+    <sex>女</sex>
+    <birthday>1995.2.23</birthday>
+  </student>
+  <student>
+    <name>杨光林</name>
+    <sex>女</sex>
+    <birthday>1994.8.15</birthday>
+  </student>
+ <student>
+    <name>付文斌</name>
+    <sex>男</sex>
+    <birthday>1997.3.25</birthday>
+  </student>
+</students>
+

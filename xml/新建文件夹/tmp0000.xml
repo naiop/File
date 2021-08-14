@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<?xml-stylesheet href="css.css" type="text/css"?>
+<sg>
+<mulu>五言律诗</mulu>
+<sggs>
+	<biaoti>静夜思</biaoti>
+	<zuozhe>李白</zuozhe>
+	<wenben>
+		<VERSE>床前明月光，疑是地上霜。</VERSE>
+		<VERSE>举头望明月，低头思故乡。</VERSE>
+	</wenben> 
+</sggs>
+
+<sggs>
+	<biaoti>相思</biaoti>
+	<zuozhe>王维</zuozhe>
+	<wenben>
+		<VERSE>红豆生南国，春来发几枝。</VERSE>
+		<VERSE>劝君多采拮，此物最相思。</VERSE>
+	</wenben> 
+</sggs>
+
+<sggs>
+	<biaoti>寻隐者不遇</biaoti>
+	<zuozhe>贾岛</zuozhe>
+	<wenben>
+		<VERSE>松下问童子，言师采药去。</VERSE>
+		<VERSE>只在此山中，云深不知处。</VERSE>
+	</wenben>
+</sggs> 
+</sg>

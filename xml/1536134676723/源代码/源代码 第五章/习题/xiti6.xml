@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gb2312"?>
+<?xml-stylesheet type="text/css" href="xiti6.css " ?>
+<!-- xiti6.xml -->
+<CATALOG>
+<title>五言律诗</title>
+<poetry>
+<title>静夜思</title>
+<author>李白</author>
+<content>
+<verse>床头明月光，疑是地上霜。</verse>
+<verse>举头望明月，低头思故乡。</verse>
+</content>
+</poetry>
+<poetry>
+<title>寻隐者不遇</title>
+<author>贾岛</author>
+<content>
+<verse>松下问童子，言师采药去。</verse>
+<verse>只在此山中，云深不知处。</verse>
+</content>
+</poetry>
+<poetry>
+<title>相思</title>
+<author>王维</author>
+<content>
+<verse>红豆生南国，春来发几枝。</verse>
+<verse>劝君多釆撷，此物最相思。</verse>
+</content>
+</poetry>
+</CATALOG>
+
+

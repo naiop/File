@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<books>
+    <book id="0001" bookcategory="文艺" amount="150" remain="80"
+    discount="8.5">
+              <title>三国演义</title>
+              <author>罗贯中</author>
+              <publisher>文艺出版社</publisher>
+              <ISBN>0-764-58007-8</ISBN>
+              <price>80.0</price>
+      </book>
+      <book id="0002" bookcategory="文艺" amount="300" remain="180" discount="8.7">
+              <title>红楼梦</title>
+              <author>曹雪芹</author>
+              <publisher>三秦出版社</publisher>
+              <ISBN>7805468397</ISBN>
+              <price>22</price>
+      </book>
+      <book id="0065" bookcategory="文学" amount="120" remain="86" discount="8.0">
+              <title>外国文学史(亚非卷)</title>
+              <author>朱维之</author>
+              <publisher>南开大学出版社</publisher>
+              <ISBN>7-310-01122-8</ISBN>
+              <price>20</price>
+      </book>
+      <book id="0076" bookcategory="文学" amount="130" remain="84" discount="8.0">
+              <title>20世纪欧美文学简史</title>
+              <author>李明滨</author>
+              <publisher>北京大学出版社</publisher>
+              <ISBN>7-301-04616-2</ISBN>
+              <price>21.8</price>
+      </book>
+       <book id="0012" bookcategory="文学" amount="210" remain="60" discount="8.5">
+              <title>西方文艺理论名著教程(下)</title>
+              <author>胡经之</author>
+              <publisher>北京大学出版社</publisher>
+              <ISBN>7-301-00179-7</ISBN>
+              <price>23</price>
+      </book>
+    </books>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 球队 [
+<!ELEMENT 球队 (主教练,队员介绍)>
+<!ATTLIST 球队 队名 CDATA #REQUIRED>
+<!ATTLIST 主教练 国籍 CDATA #REQUIRED>
+<!ELEMENT 主教练 (#PCDATA)>
+<!ELEMENT 队员介绍 (队长,球员+)>
+<!ELEMENT 队长 (#PCDATA)>
+<!ELEMENT 球员 (#PCDATA)>
+]>
+
+<球队 队名="巴塞罗那">
+	<主教练 国籍="西班牙">恩里克</主教练>
+	<队员介绍>
+		<队长>梅西</队长>
+		<球员>苏亚雷斯</球员>
+		<球员>内马尔</球员>
+		<球员>伊涅斯塔</球员>
+		<球员>马斯切拉诺</球员>
+		<球员>皮克</球员>
+		<球员>布斯克斯</球员>
+	</队员介绍>
+</球队>

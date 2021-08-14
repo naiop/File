@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT 联系人列表 (联系人+)>
+<!ELEMENT 联系人 (姓名,性别,公司,EMAIL,(移动电话|固定电话),地址)>
+<!ELEMENT 姓名 (#PCDATA)>
+<!ELEMENT 性别 (#PCDATA)>
+<!ELEMENT 公司 (#PCDATA)>
+<!ELEMENT EMAIL (#PCDATA)>
+<!ELEMENT 移动电话 (#PCDATA)>
+<!ELEMENT 固定电话 (#PCDATA)>
+<!ELEMENT 地址 (省,市,街道)>
+<!ELEMENT 省 (#PCDATA)>
+<!ELEMENT 市 (#PCDATA)>
+<!ELEMENT 街道 (#PCDATA)>

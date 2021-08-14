@@ -1,0 +1,29 @@
+<!-- File Name:7-6.html -->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<TITLE>有效性测试</TITLE>
+<SCRIPT LANGUAGE="JavaScript" FOR="Window" EVENT="ONLOAD">
+var xmldoc=new ActiveXObject("MSXML.DOMDocument");
+xmldoc.async="false";
+xmldoc.load("7-6.xml");
+if(xmldoc.ParseError.errorCode!=0)
+{
+str1="载入的文档有错误!错误信息如下:"+"\n";
+str2="错误代号:"+xmldoc.ParseError.errorCode +"\n";
+str3="文档出错位置:"+xmldoc.ParseError.filepos +"\n";
+str4="错误所在行:"+xmldoc.ParseError.line +"\n";
+str5="错误所在列:"+xmldoc.ParseError.linepos +"\n";
+str6="错误原因:"+xmldoc.ParseError.reason +"\n";
+str7="错误文本:"+xmldoc.ParseError.srcText +"\n";
+str8="文档路径:"+xmldoc.ParseError.url +"\n";
+message=str1+str2+str3+str4+str5+str6+str7+str8;
+alert (message);
+}
+else
+alert("载入的XML文档是有效的!");
+</SCRIPT>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>

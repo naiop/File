@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="电话联系人">
+ <xs:complexType>
+<xs:sequence maxOccurs="uunbounded">
+ <xs:element name="联系人" type="联系人信息"/>
+</xs:sequence>
+ </xs:complexType>
+</xs:element >
+<xs:element name="联系人信息">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="姓名" type="xs:string"/>
+        <xs:element name="地址" type="xs:string"/>
+        <xs:element name="工作单位" type="xs:string"/>
+         <xs:element ref="联系人分类"/>
+        <xs:element ref="联系电话"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="联系电话">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice>
+          <xs:element name="手机" type="xs:string"/>
+          <xs:element name="固定电话" type="xs:string" />
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<xs:element name="联系人分类">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="同学"/>
+<xs:enumeration value="同事"/>
+<xs:enumeration value="亲戚"/>
+<xs:enumeration value="家人"/>
+<xs:enumeration value="社会朋友"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element >
+</xs:schema>
